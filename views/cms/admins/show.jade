@@ -1,0 +1,45 @@
+.page
+  .page__content
+    form(novalidate name='adminForm' ng-submit='updateAdmin()')
+      .form-group
+        label Логин
+        input.form-control(type='text' ng-model='admin.login' required)
+      .form-group
+        label Имя
+        input.form-control(type='text' ng-model='admin.name')
+      .form-group
+        label e-mail
+        input.form-control(type='text' ng-model='admin.email')
+      .form-group
+        label Группа
+        .input-group
+          select.form-control.select(ng-model='admin.groupId' ng-change='updateAdmin()'
+            ng-options='group._id as group.name for group in groups')
+
+      .form-group
+        label уровни доступа
+        table.table__build.width1100.news-table
+          thead
+            tr
+              th Модуль
+              th(ng-repeat='access in accessTypes') {{access}}  
+          tbody
+            tr
+              td Все
+              td(ng-repeat='access in accessTypes')
+                input.radio-inline(type='radio'
+                  name='globalAccess'
+                  ng-model='$parent.globalAccess'              
+                  ng-change='changeGlobalAccess(accessTypes.indexOf(access))'
+                  ng-value='accessTypes.indexOf(access)')
+    
+            tr(ng-repeat='(module, level) in admin.access')
+              td {{module}}
+              td(ng-repeat='access in accessTypes')
+                input.radio-inline(type='radio'
+                  ng-model='admin.access[module]'              
+                  ng-value='accessTypes.indexOf(access)')
+
+      .form-group.line
+        input.btn.btn-gray(type='submit' 
+          value='Обновить' ng-disabled='adminForm.$invalid')

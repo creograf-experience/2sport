@@ -1,0 +1,65 @@
+.page__title
+    h1 Редактирование новости
+.page__content.padding2
+    form(novalidate ng-submit='publish()' name='newsForm'
+      vit-form-autosave='news/{{news._id}}'
+      vit-autosave-fields='body title preview'
+      ng-model='news')
+      .form-group
+        label Заголовок
+        input.form-control(type='text' name='title'
+          ng-model='news.autosave.title' required
+          ng-model-options='modelOptions')
+      .form-group
+        label Текст
+        textarea.form-control(ui-tinymce='tinymceOptions'
+          name='body' ng-model='news.autosave.body'
+          ng-model-options='modelOptions')
+      .form-group
+        label Анонс
+        textarea.form-control(ui-tinymce='tinymceOptions'
+          ng-model='news.autosave.preview' name='preview'
+          ng-model-options='modelOptions')
+      .form-group
+        label Ссылка
+        input.form-control(type='text' ng-model='news.slug')
+      .form-group		
+        .checkbox
+          input(type='checkbox', id='c1' ng-model='news.visible' ng-change='updateNews()')
+          label(for="c1") видимость на сайте
+      .form-group
+        label Заголовок для SEO
+        input.form-control(type='text' ng-model='news.seotitle'
+          ng-model-options='modelOptions')
+      .form-group
+        label Ключевые слова
+        input.form-control(type='text' ng-model='news.seokeywords'
+          ng-model-options='modelOptions')
+      .form-group
+        label Описание
+        input.form-control(type='text' ng-model='news.seodescr'
+          ng-model-options='modelOptions')
+      .form-group.btn-clear
+        label Прикрепить форму
+        .input-group
+          span.input-group-btn
+            button.btn.btn-default(ng-click='news.form=null'
+            type='button') Очистить
+          select.form-control.select(ng-model='news.form'
+            ng-options='form._id as form.name for form in forms')
+      .form-group
+        label Версия
+        select.form-control.select(ng-model='currentVersion'
+          ng-change='changeVersion()'
+          ng-options='v as (v.updatedAt | date:"dd-MM-yyyy H:mm") for v in (versions | orderBy:"updatedAt":true)')
+      .form-group
+        input.btn.btn-green(type='submit' value='Обновить'
+          ng-disabled='newsForm.$invalid')
+        button.btn.btn-default(ng-click='recycleNews()') Удалить
+
+    script(type="text/ng-template" id="notifierPopup.html")
+      .modal-body
+        h3.modal-title Последние изменения не были сохранены. Восстановить черновик?
+      .modal-footer
+        button.btn.btn-primary(ng-click="ok(autosave)") Восстановить
+        button.btn.btn-warning(ng-click="cancel()") Отмена

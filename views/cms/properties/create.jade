@@ -1,0 +1,16 @@
+.page__title
+  h1 Новое свойство
+.page__content
+  form(novalidate ng-submit='createProperty()')
+    .form-group
+      label Название
+      input.form-control(type='text' name='name'
+        ng-model='newProperty.name' required)
+    .form-group
+      label Тип
+      .input-group
+        select.form-control.select(ng-model='newProperty.type'
+          ng-options='type for type in propertyTypes')
+    .form-group
+      .input-group
+        button.btn.btn-green(type='submit') Создать

@@ -1,0 +1,46 @@
+.page
+  .page__title
+    h1 Управление пользователями
+  .page__cpanel
+      a.add__page.btn.btn-default(ui-sref='groups.new')
+          span +
+          Добавить группу
+      a.add__page.btn.btn-default(ui-sref='admins.new')
+          span +
+          Добавить пользователя
+      a.btn-gray.btn.btn-default(ui-sref='adminsChangePass')
+          span
+          Изменить пароль
+  .page__content
+    div
+      table.table.table__build.width900.form-table
+        thead
+          tr
+            th Логин
+            th Имя
+            th e-mail
+            th операции
+        tbody.table-body(ng-repeat='group in groups')
+          tr
+            th {{group.name}}
+            td
+            td
+            td
+              a.btn.btn-sm.btn-primary(ui-sref='groups.show({groupId:group._id})')
+                span
+              button.btn.btn-sm.btn-danger(
+                ng-really-click='deleteGroup(group)'
+                ng-really-message='Удалить запись?')
+                span
+          tr(ng-repeat='admin in admins | filter:{groupId: group._id}')
+            td {{admin.login}}
+            td {{admin.name}}
+            td {{admin.email}}
+            td
+              a.btn.btn-sm.btn-primary(ui-sref='admins.show({adminId:admin._id})')
+                span
+              button.btn.btn-sm.btn-danger(
+                ng-really-click='deleteAdmin(admin)'
+                ng-really-message='Удалить запись?')
+                span
+

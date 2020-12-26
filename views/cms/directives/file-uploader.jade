@@ -1,0 +1,62 @@
+#file-uploader
+  label.btn.btn-gray
+    input.hide(type='file' ng-file-select="onFileSelect($files)" multiple hidden)
+    span.glyphicon.glyphicon-upload(style='padding-right:5px')
+    | Загрузить файл
+
+script(type='text/ng-template' id='upload-preview-modal.html')
+  #load.box-modal
+    .box-modal_close.arcticmodal-close(ng-click='dismiss()')
+    h3
+      span Загрузка файлов
+    .box-body
+      table
+        vit-queued-file(file='file' ng-repeat='file in queuedFiles')
+      button.save.btn-green.btn(ng-click='uploadAll()') Загрузить
+      button.cancel(ng-click='dismiss()') Отменить
+
+  .splash.splash-load(ng-click='dismiss()')
+
+script(type='text/ng-template' id='crop-modal.html')
+  #resize.box-modal
+    .box-modal_close.arcticmodal-close(ng-click='dismiss()')
+    h3
+      span Обрезать фото
+    .box-body
+      input.size(type='text')
+      span.icon x 
+      input.size(type='text')
+      label.scale
+        input.hide(type='radio' ng-model='aspectRatio' value='null')
+        | x:x
+      label.scale
+        input.hide(type='radio' ng-model='aspectRatio' value='1')
+        |  1:1
+      label.scale
+        input.hide(type='radio' ng-model='aspectRatio' value='0.75')
+        | 3:4
+      label.scale
+        input.hide(type='radio' ng-model='aspectRatio' value='1.33')
+        | 4:3
+
+      .crop-area
+        img-crop(image='currentImage' area-type='rectangle'
+          aspect-ratio='aspectRatio' result-image='croppedImage')
+
+      button.save.btn.btn-green(ng-click='finishCrop()') Обрезать
+      button.cancel(ng-click='dismiss') Отменить
+
+  .splash.splash-resize(ng-click='dismiss()')
+
+script(type='text/ng-template' id='queued-file.html')
+  tr
+    td
+      span(ng-if='isImage' dt-url='dataUrl' vit-thumb='{height:100,width:100}')
+    td
+      input(type='text', ng-model='file.name')
+      .loader
+        p {{status}}
+    td(ng-if='status=="ready"')
+      button.btn-clip(ng-if='isImage' ng-click='cropImage()') Обрезать
+    td(ng-if='status=="ready"')
+      button.btn-del(ng-click='uploadFile()') Загрузить

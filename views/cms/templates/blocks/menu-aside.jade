@@ -1,0 +1,53 @@
+.nav__block
+  ul.nav.nav-stacked
+    li(vit-access='{pages: 1}').nav_page
+      a(ui-sref='pages.index') Страницы
+    li(vit-access='{settings: 1}').nav_settings
+      a(ui-sref='settings') Настройки
+    li.nav_sales
+      a Продажи
+    li(vit-access='{files: 1}').nav_files
+      a(ui-sref='files') Файлы
+    li(vit-access='{forms: 1}').nav_forms
+      a(ui-sref='forms') Формы
+    li(vit-access='{news: 1}')
+      a(ui-sref='news') Новости
+    li(vit-access='{leads: 1}')
+      a(ui-sref='leads.index') Лиды
+    li(vit-access='{feedback: 1}')
+      a(ui-sref='feedback') Отзывы
+    li
+      a(ui-sref='orders.index') Заказы
+    li
+      a(ui-sref='products.index') Товары
+    li
+      a(ui-sref='categories.index') Категории
+    li(vit-access='{admins: 1}')
+      a(ui-sref='admins.list') Пользователи и доступы
+    li
+      a(ui-sref='trash') Корзина
+script(type='text/ng-template' id='menu-pane.html')
+  .col-md-2.padding0.linblock__rb
+    .linblock
+      .linblock__title
+        span.title Страницы
+        a.fl_right.btn__add(href='#') Создать
+      .linblock__menu
+        ul
+          li
+            a(href='#') Упраление страницами
+          li
+            a(href='#') Настройки
+
+    .linblock
+      .linblock__title
+        span.title Блоги
+        a.fl_right.btn__add(href='#') Написать
+      .linblock__menu
+        ul
+          li
+            a(href='#') Упраление блогами
+          li
+            a(href='#') Упраление записями
+          li
+            a(href='#') Создать блог

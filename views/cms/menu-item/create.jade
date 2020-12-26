@@ -1,0 +1,32 @@
+form(novalidate name='newMenuItemForm' ng-submit='createMenuItem()' ng-model='newMenuItem')
+  .form-group
+    label Заголовок
+    input.form-control(type='text' ng-model='newMenuItem.title' name='title' required)
+  .row
+    .col-sm-8
+      .form-group
+        label Ссылка
+        input.form-control(type='text' ng-model='newMenuItem.slug' name='slug' required)
+    .col-sm-4
+      .form-group
+        label Ссылки по умолчанию
+        select.form-control.select(ng-model='newMenuItem.slug'
+          ng-options='slug as label for (label, slug) in defaultSlugs')
+  .form-group
+    .checkbox
+      input(type='checkbox', id='c1' hidden ng-model='newMenuItem.visible')
+      label(for='c1') видимость на сайте
+    .checkbox
+      input(type='checkbox', id='c2' hidden ng-model='newMenuItem.menu')
+      label(for="c2") видимость в меню
+    .checkbox
+      input(type='checkbox' id='c3' hidden ng-model='newMenuItem.isstart')
+      label(for='c3') стартовая страница
+  .form-group
+    label Ключевые слова
+    input.form-control(type='text' ng-model='newMenuItem.seokeyword')
+  .form-group
+    label Описание
+    input.form-control(type='text' ng-model='newMenuItem.seodescr')
+  .form-group
+    input.btn.btn-green(type='submit' value='Создать' ng-disabled='newMenuItemForm.$invalid')

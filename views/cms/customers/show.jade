@@ -1,0 +1,52 @@
+.page__content
+  form.form(novalidate ng-submit='updateCustomer()')
+    .row
+      .col-sm-6
+        .form-group
+          label Имя
+          p {{::customer.name}}
+        .form-group
+          label Номер телефона
+          p {{::customer.phone}}
+        .form-group
+          label e-mail
+          p {{::customer.email}}
+        .form-group
+          label Организация
+          p {{::customer.companyName}}
+        .form-group
+          label ИНН
+          p {{::customer.inn}}
+      .col-sm-6
+        .form-group
+          label Адрес
+          p {{::customer.address}}
+        .form-group
+          label Способ доставки
+          p {{::customer.deliveryType}}
+        .form-group
+          label Способ отгрузки
+          p {{::customer.unloadType}}
+        .form-group
+          label Способ оплаты
+          p {{::customer.paymentType}}
+
+    table.table.form-table.table__build.order-table
+      thead
+        tr
+          th Код заказа
+          th Сумма, руб.
+
+      tbody
+        tr(ng-repeat='order in orders')
+          td: a(ui='ordersShow({orderId: order._id})')
+
+    .row.col-sm-4
+      .manager-controls
+        .form-group
+          label Скидка в процентах
+          input.form-control(ng-model='customer.discount' type='text')
+    .row
+      .col-xs-12
+        .form-group
+          input.btn.btn-green(type='submit' value='Обновить')

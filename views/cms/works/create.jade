@@ -1,0 +1,27 @@
+.page__content
+  form(novalidate ng-submit='mv.createWork()')
+    //ng-controller='WorkCreateCtrl as mv')
+    .form-group
+      label Название
+      input.form-control(type='text' ng-model='mv.newWork.title' required)
+    .form-group
+      label Текст
+      textarea.form-control(ui-tinymce='tinymceOptions' ng-model='mv.newWork.body')
+    .form-group
+      label Ссылка
+      input.form-control(type='text' ng-model='mv.newWork.slug')
+    .checkbox
+      label
+        input(type='checkbox' ng-model='mv.newWork.visible')
+        span видимость на сайте
+    .form-group
+      label Ключевые слова
+      input.form-control(type='text' ng-model='mv.newWork.seokeyword')
+    .form-group
+      label Описание
+      input.form-control(type='text' ng-model='mv.newWork.seodescr')
+
+    vit-attached-file(vit-file='mv.newWork.photo')
+
+    .form-group
+      input.btn.btn-green(type='submit' value='Создать' ng-disabled='mv.newWorkForm.$invalid')

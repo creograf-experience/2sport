@@ -1,0 +1,28 @@
+.page__title
+    h1 Редактирование отзывов
+.page__content.padding2
+    form.form(novalidate ng-submit='updateFeedback()')
+      .form-group
+        label Имя
+        input.form-control(type='text' ng-model='feedback.name')
+      .form-group
+        label Номер телефона
+        p {{feedback.phone}}
+      .form-group
+        label e-mail
+        p {{feedback.email}}
+      .form-group
+        label Отзыв
+        textarea.form-control(ng-model='feedback.body' rows=6 ui-tinymce='tinymceOptions')
+      .form-group
+        label Предпросмотр
+        textarea.form-control(ng-model='feedback.preview' rows=6)
+      .form-group
+        label Ответ
+        textarea.form-control(ng-model='feedback.reply')
+      .form-group.checkbox
+        label
+          input(type='checkbox' ng-model='feedback.visible')
+          span Видимость
+      .form-group
+        input.btn.btn-green(type='submit' value='Обновить')

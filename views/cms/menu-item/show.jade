@@ -1,0 +1,42 @@
+form(novalidate name='menuItemForm' ng-submit='updateMenuItem()')
+  .menuItem-link
+    span Посмотреть на сайте: 
+    a(ng-href='/{{menuItem.slug}}') {{menuItem.slug}}
+  .form-group
+    label Заголовок
+    input.form-control(type='text' ng-model='menuItem.title' name='title' required)
+  .row
+    .col-sm-8
+      .form-group
+        label Ссылка
+        input.form-control(type='text' ng-model='menuItem.slug' name='slug' required)
+    .col-sm-4
+      .form-group
+        label Ссылки по умолчанию
+        select.form-control(ng-model='menuItem.slug'
+          ng-options='slug as label for (label, slug) in defaultSlugs')
+  .form-group
+    .checkbox
+      input(type='checkbox', id='c1' hidden
+        ng-model='menuItem.visible'  ng-change='updateMenuItem()')
+      label(for='c1') видимость на сайте
+    .checkbox
+      input(type='checkbox', id='c2' hidden
+        ng-model='menuItem.menu' ng-change='updateMenuItem()')
+      label(for="c2") видимость в меню
+    .checkbox
+      input(type='checkbox' id='c3' hidden
+        ng-model='menuItem.isstart'  ng-change='updateMenuItem()')
+      label(for='c3') стартовая страница
+  .form-group
+    label Заголовок для SEO
+    input.form-control(type='text' ng-model='menuItem.seotitle')
+  .form-group
+    label Ключевые слова
+    input.form-control(type='text' ng-model='menuItem.seokeywords')
+  .form-group
+    label Описание
+    input.form-control(type='text' ng-model='menuItem.seodescr')
+  .form-group
+    button.btn.btn-default(type='submit' ng-disabled='menuItemForm.$invalid') Обновить
+    button.btn.btn-default(type='button' ng-click='recycleMenuItem()') Удалить

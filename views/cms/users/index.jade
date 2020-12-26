@@ -1,0 +1,35 @@
+.page__title
+  h1 Пользователи
+.page__cpanel
+.page__content
+  .form-group
+    label Поиск
+    input.form-control(ng-model='globalFilter.$' ng-change='updateFilter()')
+
+  table.table__build.width1100.table.user(ng-table='tableParams')
+    tr.user-row(ng-repeat='user in $data' ng-class="{'bg-danger': user.isBanned}")
+      td(data-title="'Имя'" sortable="'name'") {{user.name}} {{user.surname}}
+      td(data-title="'Личная страница'")
+        a(ng-href='/{{user.slug}}') {{user.slug}}
+      td(data-title="'email'") {{user.email}}
+      td(data-title="'IP адрес'") {{user.ipAddress}}
+      td(data-title="'Дата последнего посещения'" sortable="'visitedAt'"
+        ) {{user.visitedAt | date:'dd.MM.yyyy'}}
+      td.act(data-title="'Операции'")
+        a.btn.btn-sm.btn-primary(
+          ng-hide='user.isBanned'
+          ng-really-click='$parent.banUser(user)'
+          ng-really-message='Забанить пользователя?'
+        )
+          span
+        button.btn.btn-sm.btn-primary(
+          ng-show='user.isBanned'
+          ng-really-click='$parent.unbanUser(user)'
+          ng-really-message='Разбанить пользователя?'
+        )
+          span
+        button.btn.btn-sm.btn-danger(
+          ng-really-click='$parent.deleteUser(user)'
+          ng-really-message='Удалить запись?'
+        )
+          span

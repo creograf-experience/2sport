@@ -1,0 +1,33 @@
+doctype html
+html
+  head
+    title VitalCMS
+    meta(charset="utf-8")
+    link(rel="stylesheet" href="/css/bootstrap.min.css")
+    link(rel="stylesheet" href='/css/style.css')
+    link(rel="stylesheet" href='/css/custom.css')
+    base(href='/cms/')
+
+  body
+    .container-full.row.ng-scope.wrapper__body(ng-controller='AppCtrl')
+      include templates/blocks/top-menu
+      .container-fluid.wrapper__content
+        .row
+          vit-main-menu
+
+          .padding0.main-content
+            .ui-view-container
+              .breadcrumbs
+                ncy-breadcrumb
+
+              .page
+                .content(ui-view)
+            .alerts(ng-cloak)
+              alert(ng-repeat='alert in alerts'
+                type='{{alert.type}}' close='closeAlert($index)').
+                  {{alert.msg}}
+
+    script(src="/js/dist/vendor-cms.js")
+    script(src="/js/dist/cms.js")
+    script(src="/js/angular-locale_ru-ru.js")
+    //- script(src='//localhost:35729/livereload.js')

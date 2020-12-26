@@ -1,0 +1,12 @@
+.editable-text
+  span.glyphicon.glyphicon-edit(ng-click='openEditor()'
+    ng-hide='text.length > 0 || showEditor')
+  .text-editor(ng-show='showEditor' style='display:inline')
+    form.edit-form(name='form')
+      input.form-control(ng-blur='closeWithoutSaving()'
+        vit-enter='saveChanges()' type='text' ng-model='newText')
+      button.btn.btn-xs.btn-success(ng-show='showEditor'
+        ng-disabled='form.$invalid'
+        ng-mousedown='saveChanges()')
+        span.glyphicon.glyphicon-ok-sign
+  span(ng-show='!showEditor' ng-click='openEditor()') {{text}}

@@ -1,0 +1,37 @@
+doctype html
+html
+  head
+    title 2sport | workouts
+    meta(charset="utf-8")
+    meta(property="og:title" content="2sport")
+    meta(property="og:type" content="website")
+    meta(property="og:url" content="api.2sport.mobi/workouts/#{workout._id}")
+    meta(property="og:image" content="http://api.2sport.mobi/workouts/vk/#{workout._id}")
+    link(href='/css/public.css' rel="stylesheet")
+
+  body
+    header
+      .container
+        a.logo(href='/')
+
+    main
+      block content
+
+    section.s4
+      .container
+        h2 Get the app now
+        .page1
+          .ref
+            .image.app_store
+              a(href='https://itunes.apple.com/ru/app/2sport/id1099049826?l=ru&ls=1&mt=8')
+                img.stores(src='/resources/app_store.png', alt='')
+              img.stores(src='/resources/google_market.png', alt='')
+
+      a.creograf(href='http://creograf.ru/') Developed by Creograf Studio
+
+
+    script(src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA8XnT4a-yMwQATLDb-petrhCslqAqgRi8")
+    if process.env.NODE_ENV == 'production'
+      script(src="/js/dist/public.js")
+    else
+      script(src="/js/dist/public.js")

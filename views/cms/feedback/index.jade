@@ -1,0 +1,34 @@
+.page__title
+    h1 Отзывы
+.page__cpanel
+
+.page__content
+    table.table__build.feedback
+      thead
+        tr
+          th Фото
+          th Имя
+          th e-mail
+          th Телефон
+          th Отзыв
+          th Видимость
+          th Операции
+      tbody
+        tr(ng-repeat='feedback in feedbacks track by feedback._id')
+          td.img: img(ng-src="{{::feedback.photoUrl('thumb')}}")
+          td {{::feedback.name}}
+          td {{::feedback.email}}
+          td {{::feedback.phone}}
+          td.body {{::feedback.preview}}
+          td.visibility
+            label
+              input(type='checkbox' ng-model='feedback.visible'
+              ng-change='updateFeedback(feedback)')
+              span {{feedback.visible ? 'отображается' : 'не отображается'}}
+          td.act
+            a.btn.btn-sm.btn-primary(ui-sref='feedbackShow({feedbackId:feedback._id})')
+              span
+            button.btn.btn-sm.btn-danger(
+              ng-really-click='deleteFeedback(feedback)'
+              ng-really-message='Удалить запись?')
+              span

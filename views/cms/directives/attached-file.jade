@@ -1,0 +1,11 @@
+.image-upload(ng-if='!file')
+  label.btn.btn-gray
+    span.glyphicon.glyphicon-upload
+    | Добавить изображение
+    input.hide(type='file' vit-file-select='onFileSelect($files)')
+.image-preview.row(ng-if='file')
+  span.col-sm-2(ng-if='isImage && fromFile' dt-url='dataUrl' vit-thumb='{height:100,width:100}')
+  span.col-sm-2(ng-if='!fromFile')
+    img(ng-src='{{file.url}}' height='150' width='150')
+  span.col-sm-2 {{::file.name}}
+  button.btn.btn-danger(ng-click='removeFile()') x

@@ -1,0 +1,15 @@
+.form-group
+  label Фильтр
+  input.form-control(ng-model='globalFilter.$')
+table.table(ng-table='tableParams')
+  tbody
+    tr(ng-repeat='row in $data')
+      td(data-title="'Товар'"
+        sortable="'title'")
+        a(ui-sref='products.show.details({productId: row.productId})')
+          | {{row.title}}
+      td(data-title="'Просмотры'" sortable="'watched'") {{row.watched}}
+      td(data-title="'Добавлено в корзину'" sortable="'carted'")
+        | {{row.carted}} ({{formatPercents(row.carted, row.watched)}})
+      td(data-title="'Заказы'" sortable="'ordered'")
+        | {{row.watched}} ({{formatPercents(row.ordered, row.watched)}})

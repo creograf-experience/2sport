@@ -1,0 +1,22 @@
+.slide-down {
+	max-height: 200px;
+  overflow: hidden;
+
+  transition-property: all;
+	transition-duration: .5s;
+	transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+}
+
+.slide-down.closed {
+	max-height: 0;
+}
+
+.disabled-mask {
+  transition: 0.2s linear all;
+  opacity: 0.3;
+}
+
+.disabled-mask.ng-hide {
+  display: block!important;
+  opacity: 0;
+}

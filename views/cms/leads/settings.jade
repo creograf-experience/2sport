@@ -1,0 +1,8 @@
+.page__title
+    h1 Редактирование статусов
+.page__content.padding2
+  vit-select-editor(
+    vit-options='settings.statuses'
+    vit-change='updateSettings()')
+
+    a(ui-sref='leads.index') К лидам

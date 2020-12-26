@@ -1,0 +1,26 @@
+.page__title
+    h1 Управление пользовательскими формами
+    
+.page__cpanel
+    a.add__page(ui-sref='formsNew')
+        span +
+        Добавить форму
+.page__content
+
+        div
+          table.table__build.width900.form-table
+            thead
+              tr
+                th Имя
+                th Данные
+                th операции
+            tbody(ng-repeat='form in forms')
+              td {{::form.name}}
+              td: a(ui-sref='form.data({formId:form._id})') forms/{{::form._id}}/data
+              td
+                a.btn.btn-sm.btn-primary(ui-sref='form.show({formId:form._id})')
+                  span
+                button.btn.btn-sm.btn-danger(
+                  ng-really-click='deleteForm(form)'
+                  ng-really-message='Удалить запись?')
+                  span

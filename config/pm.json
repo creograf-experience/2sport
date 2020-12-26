@@ -1,0 +1,20 @@
+{
+  "apps": [{
+    "name": "2sport",
+    "script": "app/server.coffee",
+    "env": {
+      "NODE_ENV": "production"
+    },
+    "error_file": "log/2sport.stderr.log",
+    "out_file": "log/2sport.stdout.log"
+
+  }, {
+    "name": "2sport-spam",
+    "script": "app/recommendation-worker.coffee",
+    "env": {
+      "NODE_ENV": "production"
+    },
+    "error_file": "log/spam.stderr.log",
+    "out_file": "log/spam.stdout.log"
+  }]
+}

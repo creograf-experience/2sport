@@ -1,0 +1,14 @@
+.page__content
+  form(novalidate ng-submit='updateProperty()')
+    .form-group
+      label Название
+      input.form-control(type='text' name='name'
+        ng-model='property.name' required)
+    .form-group
+      label Тип
+      .input-group.width
+        select.form-control.select(ng-model='property.type'
+          ng-options='type for type in propertyTypes')
+    .form-group
+      .input-group
+        button.btn.btn-green(type='submit') Обновить

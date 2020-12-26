@@ -1,0 +1,13 @@
+ul.list-group.col-md-4(ui-sortable='sortableOptions' ng-model='options')
+  li.list-group-item.statuses__list__li(ng-repeat='option in options track by $index')
+    vit-editable-text(change='update()' ng-model='options[$index]')
+    button.pull-right.btn.btn-sm.btn-danger.btn__status_trash(
+      ng-really-click='deleteOption(option)'
+      ng-really-message='Удалить запись?')
+        span
+    button.pull-right.btn.btn-sm.btn-primary.btn__status_trash
+      span
+form.form.col-md-2(name='statusForm' novalidate)
+  input.form-control(type='text' ng-model='newOption' required)
+button.btn.btn-green.height(ng-click="addOption()"
+  ng-disabled='statusForm.$invalid') добавить

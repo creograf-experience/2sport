@@ -1,0 +1,381 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+  font-family: sans-serif;
+}
+
+.example img {
+  height: 100%;
+}
+
+.workout-container {
+  width: 960px;
+  height: 540px;
+  margin: auto;
+}
+.instagram.workout-container {
+  height: 612px;
+  width: 612px;
+}
+.instagram #speed-graph,
+.instagram #height-graph{
+  margin-top: -10px;
+}
+.workout-info,
+.workout-map {
+  display: inline-block;
+  width: 480px;
+  height: 100%;
+}
+
+.workout-info {
+  background-color: #8A8A8A;
+  /*padding: 0 5px;*/
+  position: relative;
+  top: -59px;
+}
+.instagram .workout-info ,
+.instagram .workout-map {
+  display: block;
+  width: 612px;
+  top: 0;
+}
+.instagram .workout-info{
+  height: 350px;
+}
+.instagram .workout-map{
+  height: 262px;
+}
+.workout-speed-graph,
+.workout-height-graph {
+  height: 200px;
+}
+ .instagram .workout-speed-graph,
+.instagram .workout-height-graph {
+  height: 135px;
+}
+
+.workout-info-stats {
+  height: 100px;
+  border-bottom: solid 1px #aaa;
+}
+.instagram .workout-info-stats{
+  height: 70px;
+}
+.instagram h2{
+  font-size: 15.4px;
+  margin: 1px auto;
+  letter-spacing: -1px;
+}
+.instagram .workout-speed-graph{
+  margin-top: 10px;
+}
+.stats-row {
+  margin: 5px auto;
+  width: 100%;
+}
+.instagram .stats-row {
+  margin: 0px auto;
+
+}
+.instagram .tick.minor{
+  font-size: 13px;
+}
+.stats-item {
+  display: inline-block;
+  color: #E0E0E0;
+  width: 160px;
+  margin: 5px auto;
+  text-align: center;
+  font-weight: 700;
+}
+ .instagram .stats-item{
+  margin: 1px auto;
+  width: 204px;
+ }
+.stats-label {
+  color: #D2D2D2;
+  font-size: 13px;
+  font-weight: 100;
+  letter-spacing: -1px;
+}
+
+.graph-label {
+  color: #E0E0E0;
+  font-size: 1.1em;
+  font-weight: 600;
+  text-align: center;
+}
+
+#speed-graph,
+#height-graph {
+  display: block;
+  margin: 0 auto;
+}
+
+#map {
+  height: 100%;
+  width: 100%;
+}
+
+path {
+  stroke: #58A7E4;
+  stroke-width: 2;
+  fill: none;
+}
+
+.axis path,
+.axis line,
+.axis .minor line {
+  fill: none;
+  stroke: #B3B3B3;
+  stroke-width: 1;
+  shape-rendering: crispEdges;
+}
+
+.axis .minor line {
+  stroke-dasharray: 2,2;
+}
+
+.axis text {
+  fill: #E0E0E0;
+}
+
+@media (max-width:960px) {
+  .workout-container {
+    margin: 0;
+  }
+}
+
+@font-face {
+  font-family: "ProximaNovaBold";
+  src: url("/fonts/ProximaNovaBold.eot");
+  src: url("/fonts/ProximaNovaBold.eot?#iefix") format("embedded-opentype"), url("/fonts/ProximaNovaBold.woff") format("woff"), url("/fonts/ProximaNovaBold.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+@font-face {
+  font-family: "ProximaNovaBlack";
+  src: url("/fonts/ProximaNovaBlack.eot");
+  src: url("/fonts/ProximaNovaBlack.eot?#iefix") format("embedded-opentype"), url("/fonts/ProximaNovaBlack.woff") format("woff"), url("/fonts/ProximaNovaBlack.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+@font-face {
+  font-family: "ProximaNovaRegular";
+  src: url("/fonts/ProximaNovaRegular.eot");
+  src: url("/fonts/ProximaNovaRegular.eot?#iefix") format("embedded-opentype"), url("/fonts/ProximaNovaRegular.woff") format("woff"), url("/fonts/ProximaNovaRegular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+@font-face {
+  font-family: "proximanovaextrabold", "ProximaNovaBold";
+  src: url("/fonts/proximanovaextrabold.eot");
+  src: url("/fonts/proximanovaextrabold.eot?#iefix") format("embedded-opentype"), url("/fonts/proximanovaextrabold.woff") format("woff"), url("/fonts/proximanovaextrabold.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+@font-face {
+  font-family: 'ptsanserifitalic';
+  src: url("/fonts/ptsanserifitalic.eot");
+  src: url("/fonts/ptsanserifitalic.eot") format("embedded-opentype"), url("/fonts/ptsanserifitalic.woff2") format("woff2"), url("/fonts/ptsanserifitalic.woff") format("woff"), url("/fonts/ptsanserifitalic.ttf") format("truetype"), url("/fonts/ptsanserifitalic.svg#ptsanserifitalic") format("svg");
+}
+header {
+  height: 90px;
+  background: #fff;
+  -moz-box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
+}
+
+.container {
+  width: 1000px;
+  margin: 0 auto;
+}
+
+.h-link {
+  float: right;
+  display: block;
+  width: 88px;
+  height: 101px;
+  -webkit-transform: skew(-20deg);
+  -moz-transform: skew(-20deg);
+  -o-transform: skew(-20deg);
+  background: #fff;
+  font-family: "ProximaNovaBold";
+  color: #000;
+  font-size: 14px;
+  text-transform: uppercase;
+  line-height: 100px;
+  text-align: center;
+  text-decoration:none;
+}
+.h-link b {
+  display: block;
+  -webkit-transform: skew(20deg);
+  -moz-transform: skew(20deg);
+  -o-transform: skew(20deg);
+}
+
+.h-link.active, .h-link:hover {
+  background: #9be800;
+  color: #fff;
+}
+
+.logo {
+  width: 259px;
+  height: 67px;
+  background: url("/resources/logo.jpg") no-repeat;
+  display: block;
+  float: left;
+  margin-top: 15px;
+}
+
+/*S4*/
+.s4 {
+  color: #000;
+  text-align: center;
+  background: url("/resources/bg-5.jpg") no-repeat, linear-gradient(to bottom, #41d1ff 0%, #1bcaf8 100%);
+  padding-bottom: 30px;
+  padding-top: 132px;
+}
+.s4 h2 {
+  font-size: 60px;
+  text-transform: uppercase;
+  font-family: "ProximaNovaBlack";
+  margin-bottom: 40px;
+}
+.s4 h3 {
+  color: #000;
+  border-bottom: 3px dotted #708992;
+  display: inline-block;
+  padding-top: 15px;
+  font-size: 40px;
+  float: left;
+  text-transform: uppercase;
+  font-family: "ProximaNovaBlack";
+}
+
+.s4  a {
+  font-family: "ProximaNovaRegular";
+  text-decoration: underline;
+  font-size: 14px;
+  color: #000;
+}
+
+.s4 {
+  position: relative;
+}
+.s4 .container {
+  max-width: 700px;
+  min-height: 200px;
+  position: relative;
+}
+
+.s4 .buy_btn  {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  color: #000;
+  float: right;
+  width: 338px;
+  text-decoration: none;
+  display: block;
+  background: #9be800;
+  border: none;
+  border-bottom: 5px solid #6db900;
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 8px;
+  border-radius: 8px;
+  font-size: 24px;
+  font-family: "ProximaNovaBold";
+}
+.s4 .buy_btn:focus {
+  border-bottom: 0px solid #9be800;
+}
+.s4 .ref{
+  margin-top: 50px;
+
+  margin-left: auto;
+  margin-right: auto;
+  display: inline-block;
+  text-align: center;
+  max-width: 80%;
+  padding-bottom: 30px;
+}
+.s4 .stores {
+  cursor: pointer;
+  display: inline-block;
+  max-width: 40%
+}
+.s4 .creograf {
+  position: relative;
+  bottom: 30px;
+  text-align: center;
+
+}
+
+.s4 .page2 form {
+  width: 100%;
+  margin: 50px auto 0;
+  padding-bottom: 57px;
+}
+.s4 .page2 input {
+  width: 45%;
+  box-sizing: border-box;
+  margin-bottom: 19px;
+}
+.s4 .page2 input[type='text'] {
+  color: #a5a4a5;
+  padding: 0 25px;
+  font-size: 19px;
+  height: 60px;
+  border: 1px solid #9f9f9f;
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 8px;
+  border-radius: 8px;
+  -moz-box-shadow: 2px 2px 8px 2px #dadee1 inset;
+  -webkit-box-shadow: 2px 2px 8px 2px #dadee1 inset;
+  box-shadow: 2px 2px 8px 2px #dadee1 inset;
+}
+
+.s4 .page2  input[type='submit'] {
+  height: 66px;
+  background: #9be800;
+  border: none;
+  border-bottom: 5px solid #6db900;
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 8px;
+  border-radius: 8px;
+  font-size: 24px;
+  font-family: "ProximaNovaBold";
+}
+.s4 .page2  input[type='submit']:focus {
+  border-bottom: 0px solid #9be800;
+  height: 61px;
+  margin-top: 5px;
+}
+.s4  p {
+  font-family: "ProximaNovaRegular";
+  font-size: 27px;
+  color: #000;
+  line-height: 1.2;
+}
+.s4 .page1 {
+  display: block;
+}
+.s4 .page2 {
+ display: none;
+}
+.s4 .page3 {
+ display: none;
+}
+.s4 .page3 p {
+  font-size: 35px;
+  margin-top: 92px;
+}
+
+main {
+  margin: 50px auto;
+}

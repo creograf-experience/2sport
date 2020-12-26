@@ -1,0 +1,55 @@
+form(novalidate name='newPageForm'
+  ng-submit='createPage()'
+  vit-form-autosave='pages/new'
+  vit-autosave-fields='body'
+  ng-model='newPage')
+  .form-group
+    label Заголовок
+    input.form-control(type='text' ng-model='newPage.title'
+      ng-model-options='modelOptions' required)
+  .form-group
+    label Текст
+    textarea.form-control(ui-tinymce='tinymceOptions'
+      ng-model='newPage.body' ng-model-options="modelOptions")
+  .form-group
+    label Ссылка
+    input.form-control(type='text' ng-model='newPage.slug'
+      ng-model-options='modelOptions')
+  .form-group
+    .checkbox
+      input(type='checkbox', id='c1' hidden ng-model='newPage.visible')
+      label(for='c1') видимость на сайте
+    .checkbox
+      input(type='checkbox', id='c2' hidden ng-model='newPage.menu')
+      label(for="c2") видимость в меню
+    .checkbox
+      input(type='checkbox' id='c3' hidden ng-model='newPage.isstart')
+      label(for='c3') стартовая страница
+  .form-group
+    label Ключевые слова
+    input.form-control(type='text' ng-model='newPage.seokeyword'
+      ng-model-options='modelOptions')
+  .form-group
+    label Описание
+    input.form-control(type='text' ng-model='newPage.seodescr'
+      ng-model-options='modelOptions')
+  .form-group.btn-clear
+    label Прикрепить форму
+    .input-group
+      span.input-group-btn
+        button.btn.btn-default(ng-click='page.form=null'
+        type='button') Очистить
+      select.form-control.select(ng-model='page.form'
+        ng-options='form._id as form.name for form in forms')
+  .form-group.form-group-td
+    label Шаблон
+    select.form-control.select(ng-model='newPage.template'
+        ng-options='template for template in templates')
+  .form-group.form-group-td
+    label Версия
+    select.right.form-control.select(ng-model='currentVersion'
+      ng-change='changeVersion()'
+      ng-options='v as (v.updatedAt | date:"dd-MM-yyyy H:mm") for v in (versions | orderBy:"updatedAt":true)')
+  .form-group
+    input.btn.btn-green(type='submit' value='Сохранить' ng-disabled='newPageForm.$invalid')
+    button.btn.btn-gray(type='button' ng-click='recyclePage()') Отменить

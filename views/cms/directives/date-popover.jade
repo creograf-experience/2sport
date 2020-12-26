@@ -1,0 +1,5 @@
+div(ng-transclude)
+div.date-popover.well(style='position:absolute'  ng-show="open")
+  datepicker(type='text' ng-change="onchange(date)"
+    min-date="today" format-day-title="MMM yyyy" format-month="MMM"
+    starting-day="1" ng-model="date")

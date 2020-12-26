@@ -1,0 +1,40 @@
+doctype html
+html
+  head
+    link(href="/css/bootstrap.min.css" rel="stylesheet")
+  body
+    #file-manager
+      div(ng-controller='FileManagerPopupCtrl')
+        .file-manager-controls
+          button.btn.btn-danger(ng-click='deleteNodes()')
+            | Удалить
+          label.btn.btn-primary(for='fileUpload')
+            span.glyphicon.glyphicon-upload(style='padding-right:5px')
+            | Загрузить
+          input.hide(type='file' id='fileUpload'
+            ng-file-select="onFileSelect($files)" multiple)
+          .current-path
+            a.btn.btn-primary(ng-click='openDir(upPath)')
+              span.glyphicon.glyphicon-arrow-up
+        
+        table.table.table-hover
+          thead
+            tr
+              td: input(type='checkbox' ng-model='allChecked' ng-change='checkAllNodes()')
+              td
+              td Имя
+              td Тип
+          tbody
+            tr(ng-repeat='node in currentFolder')
+              td: input(type='checkbox' ng-model='node.checked')
+              td.col-xs-1(vit-file-icon='node.type')
+              td
+                a(ng-if='!node.isDirectory' ng-click='choseFile(node.path)') {{node.name}}
+                span(ng-if='node.isDirectory' ng-click='openDir(node.path)') {{node.name}}
+              td {{node.type}}
+        
+        script(type='text/ng-template' id='dir-path.html')
+          ul.list-inline
+            li(ng-repeat='path in paths')
+              a(ui-sref='openDir(path.path)') {{::path.name}}
+      script(src='/tinymce/plugins/filemanager/file-manager.js')

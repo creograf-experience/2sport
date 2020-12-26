@@ -1,0 +1,8 @@
+.page__content
+  form(novalidate name='passForm' ng-submit='changePass()')
+    .form-group
+      label Новый пароль
+      input.form-control(type='password' ng-model='newPass' required)
+    .form-group
+      input.btn.btn-default(type='submit' value='Сменить'
+        ng-disabled='passForm.$invalid')

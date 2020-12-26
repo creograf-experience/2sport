@@ -1,0 +1,32 @@
+.page__content
+  form(novalidate name='groupForm' ng-submit='updateGroup()')
+    .form-group
+      label Имя
+      input.form-control(type='text' ng-model='group.name' required)
+    .form-group
+      label уровни доступа
+      table.table__build.width1100.news-table
+        thead
+          tr
+            th Модуль
+            th(ng-repeat='access in accessTypes') {{access}}  
+        tbody
+          tr
+            td Все
+            td(ng-repeat='access in accessTypes')
+              input.radio-inline(type='radio'
+                name='globalAccess'
+                ng-model='$parent.globalAccess'              
+                ng-change='changeGlobalAccess(accessTypes.indexOf(access))'
+                ng-value='accessTypes.indexOf(access)')
+  
+          tr(ng-repeat='(module, level) in group.access')
+            td {{module}}
+            td(ng-repeat='access in accessTypes')
+              input.radio-inline(type='radio'
+                ng-model='group.access[module]'              
+                ng-value='accessTypes.indexOf(access)')
+    .form-group.top-margin
+      input.btn.btn-gray(type='submit'
+        ng-disabled='groupForm.$invalid'
+        value='Обновить')

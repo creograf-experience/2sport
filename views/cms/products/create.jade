@@ -1,0 +1,82 @@
+.page__content
+  form(novalidate ng-submit='createProduct()' name='productForm')
+    .row
+        .newProduct-description.col-md-8
+            .form-group
+                label Наименование
+                input.form-control(type='text' name='title'
+                    ng-model='newProduct.title' required
+                    ng-model-options='modelOptions')
+            .form-group
+                label Описание
+                textarea.form-control(ui-tinymce='tinymceOptions'
+                    name='body' ng-model='newProduct.body'
+                    ng-model-options='modelOptions')
+            .form-group
+                label Ссылка
+                input.form-control(type='text' ng-model='newProduct.slug')
+            .form-group
+                label Категории
+                ui-select(multiple ng-model="newProduct.categoriesTitles" theme='bootstrap'
+                  on-select='addCategory($item)' on-remove='removeCategory($item)')
+                  ui-select-match(placeholder="Выберите категорию...") {{$item.title}}
+                  ui-select-choices(repeat="category.title as category in categories | filter: {title: $select.search}")
+                        div
+                         div(ng-style='nestedStyle(category)') {{category.title}}
+
+        .col-md-4
+            .newProduct-commerce
+                .form-group
+                    label Цена
+                    input.form-control(type='text' ng-model='newProduct.price')
+                .form-group
+                    label Валюта
+                    input.form-control(type='text' ng-model='newProduct.currency')
+                .checkbox
+                    label
+                        input(type='checkbox' ng-model='newProduct.starred')
+                        span Новинка
+    
+            .newProduct-storage
+                .form-group
+                    label Остаток на складе
+                    input.form-control(type='text' ng-model='newProduct.store')
+                .form-group
+                    label Единица
+                    input.form-control(type='text' ng-model='newProduct.unit')
+                .form-group
+                    label Масса
+                    input.form-control(type='text' ng-model='newProduct.weight')
+                .form-group
+                    label Объем
+                    input.form-control(type='text' ng-model='newProduct.volume')
+    
+    
+        .col-md-12.newProduct-rest
+            .checkbox
+                label
+                    input(type='checkbox' ng-model='newProduct.visible')
+                    span видимость на сайте
+            .form-group
+                label Заголовок для SEO
+                input.form-control(type='text' ng-model='newProduct.seotitle'
+                    ng-model-options='modelOptions')
+            .form-group
+                label Ключевые слова
+                input.form-control(type='text' ng-model='newProduct.seokeywords'
+                    ng-model-options='modelOptions')
+            .form-group
+                label Описание SEO
+                input.form-control(type='text' ng-model='newProduct.seodescr'
+                    ng-model-options='modelOptions')
+            .form-group.btn-clear
+                label Прикрепить форму
+                .input-group
+                    span.input-group-btn
+                        button.btn.btn-default(ng-click='newProduct.form=null'
+                        type='button') Очистить
+                    select.form-control.select(ng-model='newProduct.form'
+                        ng-options='form._id as form.name for form in forms')
+            .form-group
+                input.btn.btn-green(type='submit' value='Добавить'
+                    ng-disabled='productForm.$invalid')

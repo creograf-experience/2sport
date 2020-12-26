@@ -1,0 +1,46 @@
+{
+  "name": "vitalcms",
+  "version": "0.0.0",
+  "authors": [
+    "Stepan Shilin <sosloow@gmail.com>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "spec"
+  ],
+  "dependencies": {
+    "angular-bootstrap": "~0.11.2",
+    "angular-ui-tinymce": "~0.0.5",
+    "angular": "~1.4",
+    "angular-ui-sortable": "~0.13.0",
+    "bootstrap": "~3.3.0",
+    "ng-file-upload": "~1.6.12",
+    "page": "visionmedia/page.js#~1.4.1",
+    "angular-ui-router": "~0.2.13",
+    "jquery-ui-sortable": "sosloow/jquery-ui-sortable",
+    "jquery-ui": "~1.11.2",
+    "tinymce": "~4.1.7",
+    "angular-route": "~1.3.6",
+    "jquery": "~2.1.1",
+    "ngImgCrop": "sosloow/ngImgCrop#master",
+    "angular-mocks": "~1.3.8",
+    "lodash": "~3.7.0",
+    "handlebars": "~3.0.0",
+    "angular-breadcrumb": "~0.3.3",
+    "bower": "*",
+    "install": "~1.0.4",
+    "angular-modal-service": "~0.6.6",
+    "angular-ui-select": "~0.11.2",
+    "angular-tooltips": "~0.1.11",
+    "angular-animate": "~1.4.3",
+    "angular-resource": "~1.4.3",
+    "ng-table": "^0.8.3"
+  },
+  "resolutions": {
+    "tinymce": "~4.1.5"
+  }
+}

@@ -1,0 +1,27 @@
+.row
+  .col-md-12
+    table.table.table__build.form-table
+      thead
+        tr
+          th Свойство
+          th Значение
+          th
+      tbody(ui-sortable='sortableOptions' ng-model='product.properties')
+        tr(ng-repeat='property in product.properties')
+          td: span {{property.name}}
+          td
+            vit-editable-text(
+              change='updateProduct()'
+              ng-model='property.value' required)
+          td: button.btn.btn-sm.btn-danger(
+            ng-really-click='$parent.deleteProperty($index)'
+            ng-really-message='Удалить поле?')
+              span
+      tr
+        td: select.select.form-control(
+          ng-model='newProperty.property'
+          ng-options='property as property.name for property in unusedProps')
+        td: input.form-control(type='text' vit-enter'addProperty()'
+          ng-model='newProperty.value')
+        td: button.btn.btn-gray(type='submit' ng-click='addProperty()') Добавить
+ 

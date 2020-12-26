@@ -1,0 +1,47 @@
+doctype html
+html
+  head
+    title 2sport | workouts
+    meta(charset="utf-8")
+    meta(property="og:title" content="2sport")
+    meta(property="og:type" content="website")
+    meta(property="og:url" content="api.2sport.mobi/workouts/#{workout._id}")
+    meta(property="og:image" content="http://api.2sport.mobi/workouts/#{workout._id}/preview.png")
+    link(href='/css/public.css' rel="stylesheet")
+
+  body
+    .workout-container
+      .workout-info
+        .workout-info-stats
+          .stats-row
+            .stats-item
+              .stats-label Макс. скорость
+              .stats-value #{formatSpeed(workout.maxSpeed)} км/ч
+            .stats-item
+              .stats-label Ср. скорость
+              .stats-value #{formatSpeed(workout.meanSpeed)} км/ч
+            .stats-item
+              .stats-label Ср. темп
+              .stats-value #{formatNumber(60 / workout.meanSpeed)} мин/км
+          .stats-row
+            .stats-item
+              .stats-label Дистанция
+              .stats-value #{formatNumber(workout.distance / 1000)} км
+            .stats-item
+              .stats-label Продолжительность
+              .stats-value= formatTime(workout.time, 'HH:mm:ss.SSS')
+            .stats-item
+              .stats-label Время окончания
+              .stats-value= formatTime(workout.finishedAt, 'hh:mm:ss')
+        .workout-speed-graph
+          h2.graph-label Скорость
+          #speed-graph
+        .workout-height-graph
+          h2.graph-label Высота
+          #height-graph
+      .workout-map
+        #map
+    script(src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA8XnT4a-yMwQATLDb-petrhCslqAqgRi8")
+    script.
+      window.BACKEND_DATA = !{JSON.stringify(workout)};
+    script(src="/js/dist/public.js")

@@ -1,0 +1,69 @@
+form(novalidate name='pageForm'
+  ng-submit='publish()'
+  vit-form-autosave='pages/{{page._id}}'
+  vit-autosave-fields='body title'
+  ng-model='page')
+  .page-link
+    span Ссылка на страницу: 
+    a(ng-href='/{{page.slug}}') {{page.slug}}
+    br
+    span Изменена: {{page.modified}}
+  .form-group
+    label Заголовок
+    input.form-control(type='text' required
+      ng-model='page.autosave.title' name='title' ng-model-options='modelOptions')
+  .form-group
+    label Текст
+    textarea.form-control(ui-tinymce='tinymceOptions'
+      ng-model='page.autosave.body' name='body' ng-model-options='modelOptions')
+  .form-group
+    label Ссылка
+    input.form-control(type='text' ng-model='page.slug'
+      ng-model-options='modelOptions')
+  .form-group
+    .checkbox
+      input(type='checkbox', id='c1' hidden
+        ng-model='page.visible'  ng-change='updatePage()')
+      label(for='c1') видимость на сайте
+    .checkbox
+      input(type='checkbox', id='c2' hidden
+        ng-model='page.menu' ng-change='updatePage()')
+      label(for="c2") видимость в меню
+    .checkbox
+      input(type='checkbox' id='c3' hidden
+        ng-model='page.isstart'  ng-change='updatePage()')
+      label(for='c3') стартовая страница
+  .form-group
+    label Заголовок для SEO
+    input.form-control(type='text' ng-model='page.seotitle'
+      ng-model-options='modelOptions' ng-change='updatePage()')
+  .form-group
+    label Ключевые слова
+    input.form-control(type='text' ng-model='page.seokeywords'
+      ng-model-options='modelOptions' ng-change='updatePage()')
+  .form-group
+    label Описание
+    input.form-control(type='text' ng-model='page.seodescr'
+      ng-model-options='modelOptions' ng-change='updatePage()')
+  .form-group.btn-clear
+    label Прикрепить форму
+    .input-group
+      span.input-group-btn
+        button.btn.btn-default(ng-click='page.form=null'
+        type='button') Очистить
+      select.form-control.select(ng-model='page.form'
+        ng-options='form._id as form.name for form in forms'
+        ng-change='updatePage()')
+  .form-group.form-group-td
+    label Шаблон
+    select.form-control.select(ng-model='page.template'
+      ng-options='template for template in templates')
+  .form-group.form-group-td
+    label Версия
+    select.right.form-control.select(ng-model='currentVersion'
+      ng-change='changeVersion()'
+      ng-options='v as (v.updatedAt | date:"dd-MM-yyyy H:mm") for v in (versions | orderBy:"updatedAt":true)')
+
+  .form-group.button__margleft
+    button.btn.btn-green(type='submit' ng-disabled='pageForm.$invalid') Обновить
+    button.btn.btn-gray(type='button' ng-click='recyclePage()') Удалить

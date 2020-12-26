@@ -1,0 +1,34 @@
+.page__title
+  h1 Товары
+.page__cpanel
+    a.add__page(ui-sref='products.new')
+        span +
+        | Новый товар
+    a.btn.btn-gray(ui-sref='properties')
+        span.glyphicon.glyphicon-cog
+        | Редактировать свойства
+.page__content
+  .form-group
+    label Поиск
+    input.form-control(ng-model='globalFilter.$' ng-change='updateFilter()')
+
+  table.table__build.width1100.table.product(ng-table='tableParams')
+    tr(ng-repeat='product in $data')
+      td(data-title="'Название'" sortable="'title'") {{product.title}}
+      td(data-title="'Ссылка'")
+        a(ng-href='/products/{{product.slug}}') {{product.slug}}
+      td(data-title="'Видимость на сайте'")
+        label
+          input(type='checkbox' ng-model='product.visible'
+            ng-change='$parent.updateProduct(product)' ng-checked='product.visible')
+          span {{product.visible ? 'отображается' : 'не отображается'}}
+      td(data-title="'Цена'" sortable="'price'")
+        | {{product.price | cents}} {{product.currency}}
+      td.act(data-title="'Операции'")
+        a.btn.btn-sm.btn-primary(ui-sref='products.show.details({productId:product._id})')
+          span
+        button.btn.btn-sm.btn-danger(
+          ng-really-click='$parent.recycleProduct(product)'
+          ng-really-message='Удалить запись?'
+        )
+          span

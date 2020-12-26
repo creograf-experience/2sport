@@ -1,0 +1,31 @@
+.page__title
+    h1 Новости
+.page__cpanel
+    a.add__page(ui-sref='newsNew')
+        span +
+        Создать страницу
+.page__content
+    table.table__build.width1100.news-table
+      thead
+        th Название
+        th Дата
+        th Ссылка
+        th Видимость на сайте
+        th Операции
+      tbody(ng-repeat='news in news')
+        td {{:: news.title}}
+        td {{:: news.createdAt | date:'dd-MM-yyyy H:mm'}}
+        td: a(ng-href='/news/{{news.slug}}') {{news.slug}}
+        td
+          label
+            input(type='checkbox' ng-model='news.visible'
+            ng-change='$parent.updateNews(news)' ng-checked='news.visible')
+            span {{news.visible ? 'Отображается' : 'Не отображается'}}
+        td
+          a.btn.btn-sm.btn-primary(ui-sref='newsShow({newsId:news._id})')
+            span
+          button.btn.btn-sm.btn-danger(
+            ng-really-click='$parent.recycleNews(news)'
+            ng-really-message='Удалить запись?'
+          )
+            span

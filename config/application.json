@@ -1,0 +1,12 @@
+{
+  "port": "3040",
+  "adminPass" : "lady8ug",
+  "sessionSecret": "04jndc9bu234zf08045u34nvc",
+  "templatesDir": "views/templates",
+  "tmp": "/tmp",
+  "database": {
+    "development": "mongodb://localhost/2sport",
+    "production": "mongodb://localhost/2sport",
+    "test": "mongodb://localhost/prof_test"
+  }
+}

@@ -1,0 +1,27 @@
+.col-md-2.padding0.linblock__rb
+  .linblock(ng-repeat='item in subMenu.children')
+    .linblock__title(ng-if='!item.actions')
+      span.title
+        a(ui-sref='{{item.state}}'
+          ng-click='MainMenuCtrl.closePane()') {{item.name}}
+      a.fl_right.btn__settings(ui-sref='{{item.settingsState}}'
+        ng-if='item.settingsState'
+        ng-click='MainMenuCtrl.closePane()')
+        span.glyphicon.glyphicon-cog
+      a.fl_right.btn__add(ui-sref='{{item.createNewState}}'
+        ng-if='item.createNewState'
+        ng-click='MainMenuCtrl.closePane()')
+        span.glyphicon.glyphicon-plus
+
+    .linblock__title(ng-if='!!item.actions')
+      span.title {{item.name}}
+      a.fl_right.btn__add(
+        ui-sref='{{item.createNewState}}'
+        ng-if='item.createNewState'
+        ng-click='MainMenuCtrl.closePane()') Создать
+
+    .linblock__menu(ng-if='!!item.actions')
+      ul
+        li(ng-repeat='action in item.actions')
+          a(ui-sref='{{action.state}}'
+            ng-click='MainMenuCtrl.closePane()') {{action.name}}

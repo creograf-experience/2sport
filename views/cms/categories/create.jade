@@ -1,0 +1,24 @@
+form(novalidate name='categoryForm' ng-submit='createCategory()')
+  .form-group
+    label Название
+    input.form-control(type='text' ng-model='newCategory.title' vit-autofocus required)
+  .form-group
+    label Описание
+    textarea.form-control(ui-tinymce='tinymceOptions' ng-model='newCategory.body')
+  .form-group
+    label Ссылка
+    input.form-control(type='text' ng-model='newCategory.slug')
+  .checkbox
+    label
+      input(type='checkbox' ng-model='newCategory.visible'
+        ng-checked='newCategory.visible')
+      span видимость в каталоге
+  .form-group
+    label Ключевые слова
+    input.form-control(type='text' ng-model='newCategory.seokeyword')
+  .form-group
+    label Описание для SEO
+    input.form-control(type='text' ng-model='newCategory.seodescr')
+  .form-group
+    input.btn.btn-green(type='submit' value='Создать'
+      ng-disabled='categoryForm.$invalid')

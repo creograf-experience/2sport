@@ -1,0 +1,61 @@
+.page__content.padding2
+    form(novalidate ng-submit='updateOptions()')
+      .mail
+        h3 Настройки исходящей почты
+        .forms-grouping
+            .form-group
+              label Почтовый ящик
+              input.form-control(type='text' ng-model='settings.mailer.from')
+            .form-group
+              label SMTP-сервер
+              input.form-control(type='text' ng-model='settings.mailer.smtpServer')
+            .form-group
+              label Логин
+              input.form-control(type='text' ng-model='settings.mailer.user')
+            .form-group
+              label Пароль
+              input.form-control(type='password' ng-model='settings.mailer.pass')
+      .trackers
+        h3 Настройки счетчиков и стороннего javascript
+        .forms-grouping
+            .form-group
+              label Мета-тег Google
+              input.form-control(type='text' ng-model='settings.metaYandex')
+            .form-group
+              label Мета-тег Яндекс
+              input.form-control(type='text' ng-model='settings.metaYandex')
+            .form-group
+              label Пользовательский код
+              textarea.form-control.code-editor(rows=7 ng-model='settings.userJs')
+      .other
+        h3 Остальные настройки
+        .forms-grouping
+            .form-group
+              label Почта админа
+              input.form-control(type='text' ng-model='settings.adminMail')
+            .form-group
+              label Почта для заказов
+              input.form-control(type='text' ng-model='settings.managerMail')
+            .form-group
+              label Контакты
+              textarea.form-control(ui-tinymce='tinymceOptions'
+                ng-model='settings.contacts')
+            .form-group
+              label Футер
+              textarea.form-control(ui-tinymce='tinymceOptions'
+                ng-model='settings.footer')
+      .contacts
+        h3 Контакты
+        .forms-grouping
+          .form-group
+            label Телефон
+            input.form-control(type='text' ng-model='settings.phone')
+          .form-group
+            label email
+            input.form-control(type='email' ng-model='settings.email')
+          .form-group
+            label Адрес
+            input.form-control(type='text' ng-model='settings.address')
+      .form-group.submit__group
+        input.btn.btn-green(type='submit' value='Сохранить')
+        button.btn.btn-primary(ng-click='sendMail()') Отправить тест

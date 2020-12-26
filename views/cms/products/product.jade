@@ -1,0 +1,28 @@
+.page__title
+  h1 Пользователи
+.page__cpanel
+.page__content
+  .form-group
+    label Поиск
+    input.form-control(ng-model='globalFilter.$' ng-change='updateFilter()')
+
+  table.table__build.width1100.table(ng-table='tableParams')
+    tr(ng-repeat='user in $data')
+      td(data-title="'Название'" sortable="'title'") {{user.title}}
+      td(data-title="'Ссылка'")
+        a(ng-href='/users/{{user.slug}}') {{user.slug}}
+      td(data-title="'Видимость на сайте'")
+        label
+          input(type='checkbox' ng-model='user.visible'
+            ng-change='$parent.updateUser(user)' ng-checked='user.visible')
+          span {{user.visible ? 'отображается' : 'не отображается'}}
+      td(data-title="'Цена'" sortable="'price'")
+        | {{user.price | cents}} {{user.currency}}
+      td.act(data-title="'Операции'")
+        a.btn.btn-sm.btn-primary(ui-sref='users.show.details({userId:user._id})')
+          span
+        button.btn.btn-sm.btn-danger(
+          ng-really-click='$parent.recycleUser(user)'
+          ng-really-message='Удалить запись?'
+        )
+          span

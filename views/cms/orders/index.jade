@@ -1,0 +1,35 @@
+.page__title
+  h1 Управление заказами
+.page__cpanel
+  a.btn.btn-gray(ui-sref='orders.settings') 
+    span.glyphicon.glyphicon-cog 
+    Настройки
+
+.page__content
+  .form-group
+    label Фильтр
+    .forms-grouping
+      input.form-control(ng-model='globalFilter.$' ng-change='updateFilter()')
+  div(vit-date-popover)
+    table.table__build.form-table.width1100(ng-table='tableParams')
+      tr(ng-repeat='order in $data')
+        td.name-order(data-title="'Имя'" sortable="'name'")
+          | {{::order.name}}
+        td(data-title="'Телефон'")
+          | {{::order.phone}}
+        td(data-title="'e-mail'")
+          | {{::order.email}}
+        td(data-title="'Дата заказа'"
+          sortable="'createdAt'")
+          | {{::order.createdAt | date:'dd-MM-yyyy H:mm'}}
+        td(data-title="'Статус'" sortable="'statusId'")
+          select.form-control.select(ng-model='order.status'
+            ng-change='updateOrder(order)'
+            ng-options='status for status in statuses')
+        td
+          a.btn.btn-sm.btn-primary(ui-sref='orders.show({orderId:order._id})')
+            span
+          button.btn.btn-sm.btn-danger(
+            ng-really-click='deleteOrder(order)'
+            ng-really-message='Удалить запись?')
+            span

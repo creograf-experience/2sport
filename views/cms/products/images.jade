@@ -1,0 +1,16 @@
+vit-image-manager(vit-item='product' vit-resource='Product')
+
+script(type='text/ng-template' id='image-manager.html')
+  ul.list-group
+    il.list-group-item(ng-repeat='image in images track by image._id')
+      vit-attached-image(vit-image='image')
+  label.btn.btn-gray(for='imageUpload')
+    span.glyphicon.glyphicon-upload
+    | Добавить изображение
+  input.hide(type='file' id='imageUpload'
+    ng-file-select="onFileSelect($files)")
+
+script(type='text/ng-template' id='attached-image.html')
+  img(ng-src='{{image.thumb.url}}')
+  p {{image.thumb.name}}
+  button.btn.btn-gray(ng-click='deleteImage()') Удалить

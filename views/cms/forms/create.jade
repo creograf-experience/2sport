@@ -1,0 +1,66 @@
+.page__title
+    h1 Добавление формы
+    
+.page__content.padding2
+    form.form(novalidate name='formForm')
+      .form-group
+        label Имя
+        input.form-control(type='text' name='name'
+          ng-model='newForm.name' required)
+      table.table__build.fields.form-table.form-create
+        thead
+          tr
+            th Название
+            th name
+            th.width Тип поля
+            th Значение по умолчанию
+            th Обязательное
+            th Только для чтения
+            th Операции
+        tbody(ui-sortable ng-model='newForm.fields')
+          tr(ng-repeat='field in newForm.fields')
+            td: vit-editable-text(ng-model='field.label')
+            td: vit-editable-text(ng-model='field.name')
+            td: select.form-control.select(ng-model='field.type'
+              ng-options='type for type in fieldTypes')
+            td: vit-field-value(ng-model='field.defaultValue' vit-field-type='field.type')
+            td: label
+              input(type='checkbox' ng-model='field.required')
+              span
+            td: label  
+              input(type='checkbox' ng-model='field.disabled')
+              span
+            td: button.btn.btn-sm.btn-danger(
+              ng-really-click='$parent.deleteField($index)'
+              ng-really-message='Удалить поле?'
+            )
+              span
+        tr
+          td: input.form-control(type='text'
+            vit-enter='addField()' name='fieldLabel'
+            ng-model='newField.label' required)
+          td: input.form-control(type='text'
+            vit-enter='addField()' name='fieldName'
+            ng-model='newField.name' required)
+          td: select.form-control.select(ng-model='newField.type'
+            ng-options='type for type in fieldTypes')
+          td: vit-field-value(ng-model='newField.defaultValue' vit-field-type='newField.type')
+          td
+            label
+              input(type='checkbox' ng-model='newField.required')
+              span
+          td
+            label
+                input(type='checkbox' ng-model='newField.disabled')
+                span
+          td: button.btn.btn-gray(type='submit' ng-click='addField()'
+            ng-disabled='formForm.fieldLabel.$invalid || formForm.fieldName.$invalid')
+            span Добавить
+      .form-group.submit__group
+        button.btn.btn-green(type='submit' ng-click='createForm()'
+          ng-disabled='formForm.name.$invalid || newForm.fields.length < 1') Создать
+
+    script(type='text/ng-template' id='field-value-input.html')
+      textarea.form-control(ng-if='showTextarea()' ng-model='$parent.defaultValue')
+      input.form-control(ng-if='!showTextarea()' ng-model='$parent.defaultValue'
+        type='{{fieldType}}' vit-enter='addField()')

@@ -1,0 +1,37 @@
+.page__title
+  h1 Управление Лидами
+.page__cpanel
+  a.btn.btn-gray(ui-sref='leads.settings') 
+    span.glyphicon.glyphicon-cog 
+    Настройки
+
+.page__content
+  .form-group
+    label Фильтр
+    .forms-grouping
+      input.form-control(ng-model='globalFilter.$' ng-change='updateFilter()')
+  div(vit-date-popover)
+    table.table__build.form-table(ng-table='tableParams')
+      tr(ng-repeat='lead in $data')
+        td(data-title="'Имя'" sortable="'name'")
+          vit-editable-text(change='updateLead(lead)' ng-model='lead.name' required)
+        td(data-title="'Телефон'")
+          vit-editable-text(change='updateLead(lead)' ng-model='lead.phone')
+        td(data-title="'e-mail'")
+          vit-editable-text(change='updateLead(lead)' ng-model='lead.email')
+        td(data-title="'Дата заказа'"
+          sortable="'createdAt'").
+          {{::lead.createdAt | date:'dd-MM-yyyy H:mm'}}
+        td(data-title="'След. шаг'" sortable="'nextStep'")
+          vit-editable-text(change='updateLead(lead)' ng-model='lead.nextStep')
+        td(data-title="'Дата след. шага'" sortable="'nextDate'")
+          vit-editable-date(change='updateLead(lead)' lead='lead')
+        td.width(data-title="'Статус'" sortable="'statusId'")
+          select.form-control.select(ng-model='lead.status'
+            ng-change='updateLead(lead)'
+            ng-options='status for status in statuses')
+        td(vit-access='{pages: 3}')
+          button.btn.btn-sm.btn-danger(
+            ng-really-click='deleteLead(lead)'
+            ng-really-message='Удалить запись?')
+            span

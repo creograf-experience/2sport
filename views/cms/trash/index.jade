@@ -1,0 +1,32 @@
+.page__title
+  h2 Управление удаленным контентом
+.page__content
+  ul.nav.nav-pills.cart
+    .btn-group
+      button.btn.btn-default(type='button'
+        ng-click='displayFull=true'
+        ng-class='{active:displayFull}') Полный
+      button.btn.btn-default(type='button'
+        ng-click='displayFull=false'
+        ng-class='{active:!displayFull}') Сокращенный
+  .trash-resource(ng-repeat='(resName, resource) in resources')
+    h3 {{resName}}
+    table.table.form-table.table__build
+      thead
+        th(ng-show='displayFull') ID
+        th Название
+        th Дата удаления
+        th Операции
+      tbody(ng-repeat='doc in resource.list')
+        tr
+          td(ng-show='displayFull') {{doc._id}}
+          td {{doc.name || doc.title}}
+          td {{doc.updatedAt | date:'dd-MM-yyyy H:mm'}}
+          td
+            button.btn.btn-sm.btn-primary(ng-click='restoreDoc(resName, doc)')
+              span
+            button.btn.btn-sm.btn-danger(
+              ng-really-click='deleteDoc(resName, doc)'
+              ng-really-message='Удалить документ?'
+            )
+              span

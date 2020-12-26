@@ -1,0 +1,8 @@
+ui-view      
+
+script(type='text/ng-template' id='file-node.html')
+  div.files-menu
+    span(vit-file-icon='node.type')
+    a(ui-sref='files.directory({path:node.path})') {{::node.name}}
+  ul(ng-if='node.items')
+    li.list-unstyled(ng-repeat='node in node.items' ng-include="'file-node.html'")

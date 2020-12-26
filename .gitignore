@@ -1,0 +1,17 @@
+*~
+node_modules/*
+bower_components/*
+*.log
+public/js/dist/*
+tmp/*
+public/angular-templates/*
+public/images/*
+public/css/bootstrap.min.css
+public/sitemap.xml
+.grunt/*
+_SpecRunner.html
+.idea
+*.iml
+.editorconfig
+scripts/*
+.#*

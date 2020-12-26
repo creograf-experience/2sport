@@ -1,0 +1,33 @@
+.page__content
+  form(novalidate name='workForm' ng-submit='mv.updateWork()')
+    .form-group
+      label Заголовок
+      input.form-control(type='text' required ng-model='mv.work.title' name='title')
+    .form-group
+      label Текст
+      textarea.form-control(name='body' ng-model='mv.work.body'
+        ui-tinymce='tinymceOptions' required)
+    .form-group
+      label Ссылка
+      input.form-control(type='text' ng-model='mv.work.slug')
+    .checkbox
+      label
+        input(type='checkbox' ng-model='work.visible' ng-change='mv.updateWork()')
+        span видимость на сайте
+    .form-group
+      label Заголовок для SEO
+      input.form-control(type='text' ng-model='mv.work.seotitle')
+    .form-group
+      label Ключевые слова
+      input.form-control(type='text' ng-model='mv.work.seokeywords')
+    .form-group
+      label Описание
+      input.form-control(type='text' ng-model='mv.work.seodescr')
+
+    vit-attached-file(vit-file='mv.work.photo'
+      vit-file-add='mv.onFileAdd(file)'
+      vit-file-remove='mv.onFileRemove()')
+
+    .form-group
+      button.btn.btn-green(type='submit' ng-disabled='workForm.$invalid') Обновить
+      button.btn.btn-gray(type='button' ng-click='mv.recycleWork()') Удалить

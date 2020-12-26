@@ -1,0 +1,30 @@
+.page__title
+  h1 Галерея работ
+.page__cpanel
+  a.btn.btn-green(ui-sref='worksCreate') Новый объект
+.page__content
+  table.form-table.table__build
+    thead
+      tr
+        th Название
+        th Изображение
+        th Видимость
+        th Операции
+    tbody
+      tr(ng-repeat='work in mv.works')
+        td {{::work.title}}
+        td: img(ng-src="{{::work.photoUrl('thumb')}}")
+        td
+          label.display-toggle
+            input.display-checkbox(type='checkbox' ng-model='work.visible'
+            ng-change='mv.updateWork(work)' ng-checked='work.visible')
+            span {{work.visible ? 'Отображается' : 'Не отображается'}}
+        td 
+          a.btn.btn-sm.btn-primary(ui-sref='worksShow({workId:work._id})')
+            span
+          button.btn.btn-sm.btn-danger(
+            ng-really-click='mv.deleteWork(work)'
+            ng-really-message='Удалить запись?')
+            span
+
+

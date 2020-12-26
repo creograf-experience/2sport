@@ -1,0 +1,722 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Project-Id-Version: \n"
+
+#: public/angular-templates/chats/index.html:1
+msgid "1 диалог"
+msgid_plural "{{$count}} диалогов"
+msgstr[0] ""
+msgstr[1] ""
+
+#: public/angular-templates/users/partials/details.html:1
+msgid "Facebook"
+msgstr ""
+
+#: public/angular-templates/users/partials/edit-details.html:1
+#: public/angular-templates/users/partials/guest-modal.html:1
+#: public/angular-templates/users/search.html:1
+msgid "Анг."
+msgstr ""
+
+#: public/angular-templates/users/partials/edit-details.html:1
+#: public/angular-templates/users/partials/photo.html:1
+#: public/angular-templates/users/partials/security.html:1
+#: public/angular-templates/users/partials/tabs.html:1
+msgid "Безопасность"
+msgstr ""
+
+#: public/angular-templates/users/partials/guest-modal.html:1
+msgid "Бюджетная"
+msgstr ""
+
+#: public/angular-templates/partials/forgot-modal.html:2
+msgid "Вам на почту отправлено письмо с дальнейшими инструкциями."
+msgstr ""
+
+#: public/angular-templates/partials/forgot-modal.html:1
+msgid ""
+"Введите адрес своей электронной почты\n"
+"и мы вышлем вам ссылку для изменения пароля."
+msgstr ""
+
+#: public/angular-templates/users/search.html:1
+msgid "Введите имя или фамилию"
+msgstr ""
+
+#: public/angular-templates/chats/index.html:1
+msgid "Введите имя собеседника"
+msgstr ""
+
+#: public/angular-templates/partials/reset-pass.html:1
+msgid "Введите новый пароль"
+msgstr ""
+
+#: public/angular-templates/users/partials/details.html:1
+msgid "Вконтакте"
+msgstr ""
+
+#: public/angular-templates/users/partials/guest-modal.html:1
+msgid "Внебюджетная"
+msgstr ""
+
+#: public/angular-templates/users/partials/details.html:1
+#: public/angular-templates/users/partials/guest-modal.html:1
+#: public/angular-templates/users/search.html:1
+msgid "Возраст"
+msgstr ""
+
+#: public/angular-templates/pages/home.html:1
+#: public/angular-templates/partials/register-modal.html:1
+msgid "Войти"
+msgstr ""
+
+#: public/angular-templates/partials/login-modal.html:1
+msgid "Войти через соц. сети"
+msgstr ""
+
+#: public/angular-templates/partials/forgot-modal.html:1
+msgid "Восстановить пароль"
+msgstr ""
+
+#: public/angular-templates/chats/show.html:1
+msgid "Все диалоги"
+msgstr ""
+
+#: public/angular-templates/users/index.html:1
+#: public/angular-templates/users/partials/sidebar.html:1
+#: public/angular-templates/users/search.html:1
+msgid "Встретимся!"
+msgstr ""
+
+#: public/angular-templates/pages/home.html:1
+msgid "Встречайся с единомышленниками!"
+msgstr ""
+
+#: public/angular-templates/pages/home.html:1
+msgid "Встречайся с профсоюзниками по всему миру!"
+msgstr ""
+
+#: public/angular-templates/users/search.html:1
+msgid "Встречи"
+msgstr ""
+
+#: public/angular-templates/partials/login-modal.html:1
+msgid "Вход"
+msgstr ""
+
+#: public/angular-templates/invites/index.html:1
+msgid "Входящие"
+msgstr ""
+
+#: public/angular-templates/users/search.html:1
+msgid "Выберите пол"
+msgstr ""
+
+#: public/angular-templates/pages/home.html:1
+msgid "Выход"
+msgstr ""
+
+#: public/angular-templates/app.html:1
+msgid "Главная"
+msgstr ""
+
+#: public/angular-templates/users/partials/details.html:1
+#: public/angular-templates/users/partials/edit-details.html:1
+#: public/angular-templates/users/partials/guest-modal.html:1
+#: public/angular-templates/users/search.html:1
+msgid "Город"
+msgstr ""
+
+#: public/angular-templates/users/search.html:1
+msgid "Готов пригласить"
+msgstr ""
+
+#: public/angular-templates/users/partials/details.html:1
+msgid "Готов принять"
+msgstr ""
+
+#: public/angular-templates/pages/home.html:1
+msgid "ДЕЛИСЬ МЕРОПРИЯТИЯМИ!"
+msgstr ""
+
+#: public/angular-templates/users/partials/edit-details.html:1
+msgid "Дата рождения"
+msgstr ""
+
+#: public/angular-templates/users/partials/guest-modal.html:1
+#: public/angular-templates/users/search.html:1
+msgid "До"
+msgstr ""
+
+#: public/angular-templates/users/friends.html:1
+#: public/angular-templates/users/index.html:1
+#: public/angular-templates/users/partials/sidebar.html:1
+msgid "Добавить в друзья"
+msgstr ""
+
+#: public/angular-templates/users/partials/details.html:1
+#: public/angular-templates/users/partials/edit-details.html:1
+#: public/angular-templates/users/partials/guest-modal.html:1
+#: public/angular-templates/users/search.html:1
+msgid "Должность"
+msgstr ""
+
+#: public/angular-templates/users/partials/edit-details.html:1
+#: public/angular-templates/users/partials/guest-modal.html:1
+#: public/angular-templates/users/search.html:1
+msgid "Другая должность"
+msgstr ""
+
+#: public/angular-templates/users/partials/edit-details.html:1
+#: public/angular-templates/users/partials/guest-modal.html:1
+#: public/angular-templates/users/search.html:1
+msgid "Другая отрасль"
+msgstr ""
+
+#: public/angular-templates/users/partials/edit-details.html:1
+msgid "Другой уровень орг."
+msgstr ""
+
+#: public/angular-templates/users/partials/edit-details.html:1
+#: public/angular-templates/users/search.html:1
+msgid "Другой язык"
+msgstr ""
+
+#: public/angular-templates/users/search.html:1
+msgid "Дружить"
+msgstr ""
+
+#: public/angular-templates/app.html:1
+#: public/angular-templates/users/index.html:1
+#: public/angular-templates/users/partials/sidebar.html:1
+#: public/angular-templates/users/search.html:1
+msgid "Друзья"
+msgstr ""
+
+#: public/angular-templates/users/partials/guest-modal.html:1
+#: public/angular-templates/users/search.html:1
+msgid "Жен."
+msgstr ""
+
+#: public/angular-templates/pages/home.html:1
+msgid "Забыли пароль?"
+msgstr ""
+
+#: public/angular-templates/partials/photo-upload.html:1
+msgid "Загрузить фото"
+msgstr ""
+
+#: public/angular-templates/partials/login-modal.html:1
+#: public/angular-templates/partials/register-modal.html:1
+msgid "Зарегистрироваться"
+msgstr ""
+
+#: public/angular-templates/invites/outcoming.html:1
+msgid "Заявка отклонена"
+msgstr ""
+
+#: public/angular-templates/invites/outcoming.html:1
+msgid "Заявка принята"
+msgstr ""
+
+#: public/angular-templates/users/friends.html:1
+#: public/angular-templates/users/partials/header.html:1
+msgid "Заявки в друзья"
+msgstr ""
+
+#: public/angular-templates/users/partials/security.html:1
+msgid "Изменить email"
+msgstr ""
+
+#: public/angular-templates/users/partials/security.html:1
+msgid "Изменить пароль"
+msgstr ""
+
+#: public/angular-templates/partials/register-modal.html:1
+#: public/angular-templates/users/partials/details.html:1
+#: public/angular-templates/users/partials/edit-details.html:1
+msgid "Имя"
+msgstr ""
+
+#: public/angular-templates/users/partials/details.html:1
+#: public/angular-templates/users/partials/edit-details.html:1
+msgid "Информация об организации"
+msgstr ""
+
+#: public/angular-templates/invites/index.html:1
+msgid "Исходящие"
+msgstr ""
+
+#: public/angular-templates/chats/show.html:1
+msgid "К списку друзей"
+msgstr ""
+
+#: public/angular-templates/pages/home.html:1
+msgid "Как это работает"
+msgstr ""
+
+#: public/angular-templates/users/partials/guest-modal.html:1
+msgid "Кол-во человек"
+msgstr ""
+
+#: public/angular-templates/users/partials/details.html:1
+#: public/angular-templates/users/partials/edit-details.html:1
+msgid "Личная информация"
+msgstr ""
+
+#: public/angular-templates/users/partials/guest-modal.html:1
+msgid "Любой"
+msgstr ""
+
+#: public/angular-templates/app.html:1
+msgid "Люди"
+msgstr ""
+
+#: public/angular-templates/app.html:1
+#: public/angular-templates/users/partials/header.html:1
+msgid "Мероприятия"
+msgstr ""
+
+#: public/angular-templates/users/partials/guest-modal.html:1
+msgid "Могу пригласить"
+msgstr ""
+
+#: public/angular-templates/users/friends.html:1
+msgid "Мои друзья"
+msgstr ""
+
+#: public/angular-templates/chats/index.html:1
+msgid "Мои сообщения"
+msgstr ""
+
+#: public/angular-templates/users/partials/guest-modal.html:1
+#: public/angular-templates/users/search.html:1
+msgid "Муж."
+msgstr ""
+
+#: public/angular-templates/users/partials/details.html:1
+#: public/angular-templates/users/partials/edit-details.html:1
+msgid "Название предприятия"
+msgstr ""
+
+#: public/angular-templates/users/search.html:1
+msgid "Найти"
+msgstr ""
+
+#: public/angular-templates/users/search.html:1
+msgid "Найти людей"
+msgstr ""
+
+#: public/angular-templates/invites/incoming.html:1
+#: public/angular-templates/invites/outcoming.html:1
+msgid "Написать сообщение"
+msgstr ""
+
+#: public/angular-templates/users/partials/details.html:1
+msgid "Не принимает гостей"
+msgstr ""
+
+#: public/angular-templates/invites/message-modal.html:1
+#: public/angular-templates/users/partials/message-modal.html:1
+msgid "Новое сообщение"
+msgstr ""
+
+#: public/angular-templates/app.html:1
+#: public/angular-templates/users/partials/header.html:1
+msgid "Новые гости"
+msgstr ""
+
+#: public/angular-templates/users/partials/security.html:1
+msgid "Новый email"
+msgstr ""
+
+#: public/angular-templates/users/partials/security.html:1
+msgid "Новый пароль"
+msgstr ""
+
+#: public/angular-templates/users/partials/details.html:1
+#: public/angular-templates/users/partials/edit-details.html:1
+msgid "О себе"
+msgstr ""
+
+#: public/angular-templates/users/partials/guest-modal.html:1
+msgid "Областной"
+msgstr ""
+
+#: public/angular-templates/pages/home.html:1
+msgid "Обменивайся опытом"
+msgstr ""
+
+#: public/angular-templates/users/index.html:1
+#: public/angular-templates/users/partials/sidebar.html:1
+#: public/angular-templates/users/search.html:1
+msgid "Организатор"
+msgstr ""
+
+#: public/angular-templates/users/partials/details.html:1
+msgid "Организаций мероприятий"
+msgstr ""
+
+#: public/angular-templates/users/partials/guest-modal.html:1
+#: public/angular-templates/users/search.html:1
+msgid "От"
+msgstr ""
+
+#: public/angular-templates/invites/incoming.html:1
+#: public/angular-templates/users/friends.html:1
+msgid "Отклонить"
+msgstr ""
+
+#: public/angular-templates/invites/outcoming.html:1
+msgid "Отменить заявку"
+msgstr ""
+
+#: public/angular-templates/users/partials/guest-modal.html:1
+msgid "Отметить командировку"
+msgstr ""
+
+#: public/angular-templates/users/partials/details.html:1
+#: public/angular-templates/users/partials/edit-details.html:1
+msgid "Отношение к алкоголю"
+msgstr ""
+
+#: public/angular-templates/users/partials/details.html:1
+#: public/angular-templates/users/partials/edit-details.html:1
+msgid "Отношение к курению"
+msgstr ""
+
+#: public/angular-templates/users/index.html:1
+#: public/angular-templates/users/partials/sidebar.html:1
+msgid "Отозвать заявку"
+msgstr ""
+
+#: public/angular-templates/chats/index.html:1
+#: public/angular-templates/chats/show.html:1
+#: public/angular-templates/invites/message-modal.html:1
+#: public/angular-templates/users/partials/message-modal.html:1
+msgid "Отправить"
+msgstr ""
+
+#: public/angular-templates/users/index.html:1
+#: public/angular-templates/users/partials/sidebar.html:1
+msgid "Отправить сообщение"
+msgstr ""
+
+#: public/angular-templates/users/partials/details.html:1
+#: public/angular-templates/users/partials/edit-details.html:1
+#: public/angular-templates/users/partials/guest-modal.html:1
+#: public/angular-templates/users/search.html:1
+msgid "Отраслевой профсоюз"
+msgstr ""
+
+#: public/angular-templates/users/partials/details.html:1
+#: public/angular-templates/users/partials/edit-details.html:1
+msgid "Отчество"
+msgstr ""
+
+#: public/angular-templates/pages/home.html:1
+#: public/angular-templates/partials/login-modal.html:1
+#: public/angular-templates/partials/register-modal.html:1
+msgid "Пароль"
+msgstr ""
+
+#: public/angular-templates/users/partials/guest-modal.html:1
+msgid "Первичная организация"
+msgstr ""
+
+#: public/angular-templates/users/partials/security.html:1
+msgid "Повторите email"
+msgstr ""
+
+#: public/angular-templates/partials/register-modal.html:1
+#: public/angular-templates/users/partials/security.html:1
+msgid "Повторите пароль"
+msgstr ""
+
+#: public/angular-templates/users/partials/details.html:1
+#: public/angular-templates/users/partials/edit-details.html:1
+#: public/angular-templates/users/partials/guest-modal.html:1
+msgid "Пол"
+msgstr ""
+
+#: public/angular-templates/partials/register-modal.html:1
+msgid "Политикой конфиденциальности"
+msgstr ""
+
+#: public/angular-templates/partials/forgot-modal.html:2
+msgid "Получить пароль"
+msgstr ""
+
+#: public/angular-templates/partials/forgot-modal.html:2
+msgid "Пользователя с таким адресом email не существует."
+msgstr ""
+
+#: public/angular-templates/users/partials/guest-modal.html:1
+msgid "Помогу с проживанием"
+msgstr ""
+
+#: public/angular-templates/pages/home.html:1
+msgid "Посещай международные мероприятия"
+msgstr ""
+
+#: public/angular-templates/pages/home.html:1
+msgid "Посещай профсоюзные акции, слеты и форумы!"
+msgstr ""
+
+#: public/angular-templates/users/partials/guest-modal.html:1
+msgid "Предприятие"
+msgstr ""
+
+#: public/angular-templates/users/partials/details.html:1
+#: public/angular-templates/users/partials/edit-details.html:1
+msgid "Представляю профсоюзную организацию"
+msgstr ""
+
+#: public/angular-templates/invites/index.html:1
+#: public/angular-templates/users/index.html:1
+#: public/angular-templates/users/partials/sidebar.html:1
+msgid "Приглашения"
+msgstr ""
+
+#: public/angular-templates/pages/home.html:1
+msgid "Принимай гостей"
+msgstr ""
+
+#: public/angular-templates/invites/incoming.html:1
+msgid "Принять"
+msgstr ""
+
+#: public/angular-templates/users/partials/guest-modal.html:1
+msgid "Провести экскурсию"
+msgstr ""
+
+#: public/angular-templates/users/partials/guest-modal.html:1
+msgid "Программа"
+msgstr ""
+
+#: public/angular-templates/users/partials/edit-details.html:1
+#: public/angular-templates/users/partials/photo.html:1
+#: public/angular-templates/users/partials/security.html:1
+#: public/angular-templates/users/partials/tabs.html:1
+msgid "Профиль"
+msgstr ""
+
+#: public/angular-templates/pages/home.html:1
+msgid "Профсоюзное сообщество"
+msgstr ""
+
+#: public/angular-templates/pages/home.html:1
+msgid "Путешествуй"
+msgstr ""
+
+#: public/angular-templates/users/partials/guest-modal.html:1
+msgid "Размещу у себя"
+msgstr ""
+
+#: public/angular-templates/users/partials/photo.html:1
+msgid "Разрешены изображения размера не менее 200x250 пикселей"
+msgstr ""
+
+#: public/angular-templates/users/partials/details.html:1
+#: public/angular-templates/users/partials/edit-details.html:1
+#: public/angular-templates/users/partials/guest-modal.html:1
+msgid "Регион"
+msgstr ""
+
+#: public/angular-templates/pages/home.html:1
+#: public/angular-templates/partials/register-modal.html:1
+msgid "Регистрация"
+msgstr ""
+
+#: public/angular-templates/partials/register-modal.html:1
+msgid "Регистрация через соц. сети"
+msgstr ""
+
+#: public/angular-templates/partials/register-modal.html:1
+msgid "Регистрируясь, вы соглашаетесь с"
+msgstr ""
+
+#: public/angular-templates/partials/login-modal.html:1
+msgid "Регистрируясь, вы соглашаетесь с<a> Политикой конфиденциальности</a>"
+msgstr ""
+
+#: public/angular-templates/users/partials/details.html:1
+#: public/angular-templates/users/partials/edit-details.html:1
+#: public/angular-templates/users/partials/photo.html:1
+#: public/angular-templates/users/partials/security.html:1
+msgid "Редактировать"
+msgstr ""
+
+#: public/angular-templates/users/partials/edit-details.html:1
+#: public/angular-templates/users/partials/guest-modal.html:1
+#: public/angular-templates/users/search.html:1
+msgid "Рус."
+msgstr ""
+
+#: public/angular-templates/partials/reset-pass.html:1
+msgid "Сменить пароль"
+msgstr ""
+
+#: public/angular-templates/users/partials/guest-modal.html:1
+msgid "Совместный обед"
+msgstr ""
+
+#: public/angular-templates/app.html:1
+#: public/angular-templates/users/index.html:1
+#: public/angular-templates/users/partials/header.html:1
+#: public/angular-templates/users/partials/sidebar.html:1
+msgid "Сообщения"
+msgstr ""
+
+#: public/angular-templates/partials/photo-upload.html:1
+#: public/angular-templates/users/partials/edit-details.html:1
+#: public/angular-templates/users/partials/security.html:1
+msgid "Сохранить"
+msgstr ""
+
+#: public/angular-templates/users/partials/guest-modal.html:1
+msgid "Сохранить изменения"
+msgstr ""
+
+#: public/angular-templates/users/index.html:1
+#: public/angular-templates/users/partials/sidebar.html:1
+msgid "Список друзей"
+msgstr ""
+
+#: public/angular-templates/users/partials/details.html:1
+#: public/angular-templates/users/partials/edit-details.html:1
+#: public/angular-templates/users/partials/guest-modal.html:1
+#: public/angular-templates/users/search.html:1
+msgid "Страна"
+msgstr ""
+
+#: public/angular-templates/users/partials/details.html:1
+#: public/angular-templates/users/partials/edit-details.html:1
+msgid "Сфера"
+msgstr ""
+
+#: public/angular-templates/users/partials/guest-modal.html:1
+msgid "Сфера деятельности"
+msgstr ""
+
+#: public/angular-templates/users/partials/details.html:1
+#: public/angular-templates/users/partials/edit-details.html:1
+msgid "Телефон"
+msgstr ""
+
+#: public/angular-templates/users/partials/guest-modal.html:1
+msgid "Территориальный"
+msgstr ""
+
+#: public/angular-templates/users/partials/guest-modal.html:1
+msgid "Требования к встречаемым"
+msgstr ""
+
+#: public/angular-templates/partials/register-modal.html:1
+msgid "У меня уже есть аккаунт&nbsp;"
+msgstr ""
+
+#: public/angular-templates/users/friends.html:1
+#: public/angular-templates/users/index.html:1
+#: public/angular-templates/users/partials/sidebar.html:1
+msgid "Удалить из друзей"
+msgstr ""
+
+#: public/angular-templates/users/partials/guest-modal.html:1
+msgid "Уровень"
+msgstr ""
+
+#: public/angular-templates/partials/register-modal.html:1
+#: public/angular-templates/users/partials/details.html:1
+#: public/angular-templates/users/partials/edit-details.html:1
+msgid "Фамилия"
+msgstr ""
+
+#: public/angular-templates/users/partials/guest-modal.html:1
+msgid "Федеральный"
+msgstr ""
+
+#: public/angular-templates/users/partials/edit-details.html:1
+#: public/angular-templates/users/partials/photo.html:1
+#: public/angular-templates/users/partials/security.html:1
+#: public/angular-templates/users/partials/tabs.html:1
+msgid "Фото"
+msgstr ""
+
+#: public/angular-templates/users/partials/guest-modal.html:1
+msgid "Чел."
+msgstr ""
+
+#: public/angular-templates/users/partials/details.html:1
+#: public/angular-templates/users/partials/edit-details.html:1
+msgid "Число сотрудников"
+msgstr ""
+
+#: public/angular-templates/users/partials/details.html:1
+#: public/angular-templates/users/partials/edit-details.html:1
+msgid "Эл. почта"
+msgstr ""
+
+#: public/angular-templates/partials/forgot-modal.html:1
+#: public/angular-templates/partials/login-modal.html:1
+#: public/angular-templates/partials/register-modal.html:1
+msgid "Электронная почта"
+msgstr ""
+
+#: public/angular-templates/partials/login-modal.html:1
+msgid "Я пока что не зарегистрировался на сайте&nbsp;"
+msgstr ""
+
+#: public/angular-templates/users/partials/details.html:1
+#: public/angular-templates/users/partials/edit-details.html:1
+#: public/angular-templates/users/partials/guest-modal.html:1
+#: public/angular-templates/users/search.html:1
+msgid "Язык"
+msgstr ""
+
+#: public/angular-templates/app.html:1
+#: public/angular-templates/pages/home.html:1
+msgid "Язык сайта"
+msgstr ""
+
+#: public/angular-templates/users/partials/details.html:1
+msgid "английский"
+msgstr ""
+
+#: public/angular-templates/pages/home.html:1
+msgid "гостей"
+msgstr ""
+
+#: public/angular-templates/partials/reset-pass.html:1
+msgid "пароль"
+msgstr ""
+
+#: public/angular-templates/pages/home.html:1
+msgid "по всему миру"
+msgstr ""
+
+#: public/angular-templates/partials/reset-pass.html:1
+msgid "повторите пароль"
+msgstr ""
+
+#: public/angular-templates/users/partials/guest-modal.html:1
+msgid "подсказка"
+msgstr ""
+
+#: public/angular-templates/pages/home.html:1
+msgid "принимай"
+msgstr ""
+
+#: public/angular-templates/pages/home.html:1
+msgid "проводи мероприятия,"
+msgstr ""
+
+#: public/angular-templates/users/partials/details.html:1
+msgid "русский"
+msgstr ""
+
+#: public/angular-templates/pages/home.html:1
+msgid "участвуй в мероприятиях"
+msgstr ""

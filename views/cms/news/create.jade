@@ -1,0 +1,38 @@
+.page__title
+    h1 Добавить новость
+.page__content.padding2
+    form(novalidate name='newsForm' ng-submit='createNews()')
+      .form-group
+        label Заголовок
+        input.form-control(type='text' ng-model='newNews.title' required)
+      .form-group
+        label Текст
+        textarea.form-control(ui-tinymce='tinymceOptions' ng-model='newNews.body')
+      .form-group
+        label Анонс
+        textarea.form-control(ui-tinymce='tinymceOptions' ng-model='newNews.preview')
+      .form-group
+        label Ссылка
+        input.form-control(type='text' ng-model='newNews.slug')
+      .form-group		
+        .checkbox
+          input(type='checkbox', id='c1' ng-model='newNews.visible')
+          label(for="c1") видимость на сайте
+      .form-group
+        label Ключевые слова
+        input.form-control(type='text' ng-model='newNews.seokeyword')
+      .form-group
+        label Описание
+        input.form-control(type='text' ng-model='newNews.seodescr')
+      .form-group.btn-clear
+        label Прикрепить форму
+        .input-group
+          span.input-group-btn
+            button.btn.btn-default(ng-click='news.form=null'
+            type='button') Очистить
+          select.form-control.select(ng-model='news.form'
+            ng-options='form._id as form.name for form in forms')
+      .form-group
+        input.btn.btn-green(type='submit' value='Создать'
+          ng-disabled='newsForm.$invalid')
+

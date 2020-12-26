@@ -1,0 +1,23 @@
+.page__title
+  h1 Свойства товаров
+.page__cpanel
+  a.btn.btn-gray(ui-sref='propertiesNew') 
+    Добавить свойство
+.page__content
+    .form-group.width900
+      label Поиск
+      .forms-grouping
+        input.form-control(ng-model='globalFilter.$' ng-change='updateFilter()')
+.page__content
+  table.table.table__build.width900.form-table(ng-table='tableParams')
+    tr(ng-repeat='property in $data')
+      td(data-title="'Название'" sortable="'name'") {{property.name}}
+      td(data-title="'Тип'" sortable="'type'") {{property.type}}
+      td(data-title="'Операции'")
+        a.btn.btn-sm.btn-primary(ui-sref='propertiesShow({propertyId: property._id})')
+          span
+        button.btn.btn-sm.btn-danger(
+          ng-really-click='$parent.deleteProperty(property)'
+          ng-really-message='Удалить запись?'
+        )
+          span

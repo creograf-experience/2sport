@@ -1,0 +1,23 @@
+.page__content
+  .form-group
+    label Фильтр
+    input.form-control(ng-model='globalFilter.$')
+  table.table.table__build(ng-table='tableParams')
+    thead
+      tr
+        th(
+          class="sortable"
+          ng-class="{'sort-asc': tableParams.isSortBy('createdAt', 'asc'), 'sort-desc': tableParams.isSortBy('createdAt', 'desc')}"
+          ng-click="sortCol('createdAt')"
+        ) Дата заполнения
+        th(ng-repeat="field in form.fields"
+          class="sortable"
+          ng-class="{'sort-asc': tableParams.isSortBy(field.name, 'asc'), 'sort-desc': tableParams.isSortBy(field.name, 'desc')}"
+          ng-click="sortCol(field.name)") {{::field.label}}
+    tr(ng-repeat='row in $data')
+      td(data-title="'Дата заполнения'"
+        sortable="'createdAt'")
+        | {{::row.createdAt | date:'dd-MM-yyyy H:mm'}}
+      td(ng-repeat='field in form.fields'
+      sortable="field.name") {{::row[field.name]}}
+  a.btn.btn-gray(ui-sref='formsShow({formId: form._id})') К форме

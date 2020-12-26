@@ -1,0 +1,35 @@
+.page__title
+  h1 Управление страницами
+.page__cpanel
+  a.add__page.fl_left.page_cmenu(vit-access='{pages: 2}' ui-sref='pages.new')
+    span +
+    | Создать страницу
+  a.btn.btn-gray(vit-access='{pages: 2}' ui-sref='pages.newMenuItem')
+    Новый пункт меню
+.page__content
+  .row
+    .page-menu
+      ul.page-node.menu(ng-model='menu.children' ui-sortable='sortableOptions' data-node-id='null')
+        li.list-unstyled(ng-repeat='node in menu.children' ng-include="'menu-node.html'")
+    .col-md.ui-view-container
+      div(ui-view)
+
+script(type='text/ng-template' id='menu-node.html')
+  .menu-row(ng-style='nestedStyle(node)')
+    a(ng-if='!node.isMenuItem'
+      ui-sref='pages.show({pageId:node._id})'
+      ) {{::node.title | truncate:20}}
+    a(ng-if='node.isMenuItem'
+      ui-sref='pages.showMenuItem({pageId:node._id})'
+      ) {{::node.title | truncate:20}}
+    .menu-controls
+      label
+        input(type='checkbox' ng-change='updatePage(node)' ng-model='node.menu')
+        span
+      label
+        input(type='radio' ng-model='homeId' ng-value='node._id'
+        ng-change='changeHome(homeId)' name='homeId')
+        span
+  ul.page-node(data-node-id='{{node._id}}'
+    ng-model='node.children' ui-sortable='sortableOptions')
+    li.list-unstyled(ng-repeat='node in node.children' ng-include="'menu-node.html'")

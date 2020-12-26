@@ -1,0 +1,25 @@
+.content
+  .page__title
+    h1 Управление категориями
+  .page__cpanel
+    a.btn.btn-green.add-category(vit-access='{pages: 2}' ui-sref='categories.new')
+      span +
+      | Новая категория
+.page__content
+  .row
+    .category-menu
+      ul.category-node.menu(ng-model='menu.children' ui-sortable='sortableOptions' data-node-id='null')
+        li.list-unstyled(ng-repeat='node in menu.children' ng-include="'category-node.html'")
+    .col-md.ui-view-container
+      div(ui-view)    
+
+script(type='text/ng-template' id='category-node.html')
+  .category-row
+    a(ui-sref='categories.show({categoryId:node._id})') {{::node.title}}
+    .category-controls
+      label
+        input(type='checkbox' ng-change='updateCategory(node)' ng-model='node.visible')
+        span
+  ul.category-node(data-node-id='{{node._id}}'
+    ng-model='node.children' ui-sortable='sortableOptions')
+    li.list-unstyled(ng-repeat='node in node.children' ng-include="'category-node.html'")

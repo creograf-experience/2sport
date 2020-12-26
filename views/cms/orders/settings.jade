@@ -1,0 +1,17 @@
+.page__content.padding2
+  h3 Статусы заказов
+  vit-select-editor(
+    vit-options='vm.settings.statuses'
+    vit-change='vm.updateSettings()')
+  .clear
+
+  h3 Способы оплаты
+  vit-select-editor(
+    vit-options='vm.settings.paymentTypes'
+    vit-change='vm.updateSettings()')
+  .clear
+
+  h3 Способы доставки
+  vit-select-editor(
+    vit-options='vm.settings.deliveryTypes'
+    vit-change='vm.updateSettings()')

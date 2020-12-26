@@ -1,0 +1,25 @@
+.page
+  .page__content
+    form(novalidate name='adminForm' ng-submit='createAdmin()')
+      .form-group
+        label Логин
+        input.form-control(type='text' ng-model='newAdmin.login' required)
+      .form-group
+        label Пароль
+        input.form-control(type='password' 
+          ng-model='newAdmin.password' required)
+      .form-group
+        label Имя
+        input.form-control(type='text' ng-model='newAdmin.name')
+      .form-group
+        label e-mail
+        input.form-control(type='text' ng-model='newAdmin.email')
+      .form-group
+        label Группа
+        .input-group
+          select.form-control.select(ng-model='newAdmin.groupId'
+            ng-options='group._id as group.name for group in groups')
+      .form-group
+        input.btn.btn-green(type='submit'
+          value='Создать' ng-disabled='adminForm.$invalid')
+  

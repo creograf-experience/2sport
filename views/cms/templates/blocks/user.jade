@@ -1,0 +1,14 @@
+include ../helpers/variables
+
+.user__block.ng-cloak
+  .user__head(ng-click='user__drop_show=!user__drop_show')
+    .user__name
+      span {{session.name}}
+    .user__image
+      img(src='/uploads/user-photo.png')
+  .user__drop(ng-class='{user__drop_show:user__drop_show}')
+    ul.user__list
+      li: a(ui-sref='settings') Настройки
+      li: a(ui-sref='admins.show({adminId:session._id})') Профиль
+      li: a(href='/cms/logout' target='_self') Выйти
+      li: a(href='/' target='_self') К сайту

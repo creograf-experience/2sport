@@ -1,0 +1,72 @@
+.page__content
+  form.form(novalidate ng-submit='updateOrder()')
+    .row
+      .col-sm-6
+        .form-group
+          label Имя
+          p {{::order.name}}
+        .form-group
+          label Номер телефона
+          p {{::order.phone}}
+        .form-group
+          label e-mail
+          p {{::order.email}}
+        .form-group
+          label Организация
+          p {{::order.companyName}}
+        .form-group
+          label ИНН
+          p {{::order.inn}}
+      .col-sm-6
+        .form-group
+          label Адрес
+          p {{::order.address}}
+        .form-group
+          label Способ доставки
+          p {{::order.deliveryType}}
+        .form-group
+          label Способ отгрузки
+          p {{::order.unloadType}}
+        .form-group
+          label Способ оплаты
+          p {{::order.paymentType}}
+        .form-group
+          label Комментарий пользователя
+          p {{order.userComment}}
+
+    table.table.form-table.table__build.order-table
+      thead
+        tr
+          th Фото
+          th Наименование
+          th Артикул
+          th Цена, руб.
+          th Кол-во
+          th Стоимость
+          th Удалить
+      tbody
+        tr(ng-repeat='item in order.items')
+          td: img(ng-src='{{::item.images[0].thumb.url}}')
+          td: a(ui-sref="products.show({productId:item._id})") {{::item.title}}
+          td {{::item.sku}}
+          td {{::(item.price/100).toFixed(2)}}
+          td: input.form-control.amount(type="number" ng-model='item.amount'
+            min='1' max='9999')
+          td.subtotal {{(item.price * item.amount / 100).toFixed(2)}}
+          td: button.btn.btn-small.btn-primary.btn-danger(type="button") 
+            span
+
+    .row.col-sm-4
+      .manager-controls
+        .form-group
+          label Комментарий к заказу
+          textarea.form-control(ng-model='order.managerComment')
+        .form-group
+          label Статус
+          select.form-control.select(ng-model='order.status'
+            ng-change='updateOrder(order)'
+            ng-options='status for status in statuses')
+    .row
+      .col-xs-12
+        .form-group
+          input.btn.btn-green(type='submit' value='Обновить')

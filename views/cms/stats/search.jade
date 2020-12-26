@@ -1,0 +1,33 @@
+.form-group
+  label Фильтр
+  input.form-control(ng-model='globalFilter.$')
+table.table(ng-table='tableParams')
+  // thead
+  //   tr
+  //     th(
+  //       class="sortable"
+  //       ng-class="{'sort-asc': tableParams.isSortBy('createdAt', 'asc'), 'sort-desc': tableParams.isSortBy('createdAt', 'desc')}"
+  //       ng-click="sortCol('createdAt')"
+  //     ) Дата отправки
+  //     th(ng-repeat="field in form.fields"
+  //       class="sortable"
+  //       ng-class="{'sort-asc': tableParams.isSortBy(field.name, 'asc'), 'sort-desc': tableParams.isSortBy(field.name, 'desc')}"
+  //       ng-click="sortCol(field.name)") Запрос
+  //     th(ng-repeat="field in form.fields"
+  //       class="sortable"
+  //       ng-class="{'sort-asc': tableParams.isSortBy(field.name, 'asc'), 'sort-desc': tableParams.isSortBy(field.name, 'desc')}"
+  //       ng-click="sortCol(field.name)") Пользователь
+  //     th(ng-repeat="field in form.fields"
+  //       class="sortable"
+  //       ng-class="{'sort-asc': tableParams.isSortBy(field.name, 'asc'), 'sort-desc': tableParams.isSortBy(field.name, 'desc')}"
+  //       ng-click="sortCol(field.name)") Кол-во результатов
+  tbody
+    tr(ng-repeat='row in $data')
+      td(data-title="'Дата отправки'"
+        sortable="'createdAt'")
+        | {{::row.createdAt | date:'dd-MM-yyyy H:mm'}}
+      td(data-title="'Запрос'") {{row.query}}
+      td(data-title="'Покупатель'")
+        a(ui-sref='customersShow({customerId: row.customer._id})')
+          | {{row.customer.name || row.customer.email}}
+      td(data-title="'Кол-во результатов'") {{row.amount}}

@@ -1,0 +1,30 @@
+html
+  head
+    title VitalCMS
+    meta(charset="utf-8")
+    link(rel="stylesheet" href="/css/bootstrap.min.css")
+    link(rel="stylesheet" href='/css/style.css')
+    base(href='/cms/')
+
+  body.login
+    a.btn-back(href='') Перейти на сайт
+    a.btn-tech(href='') Техническая поддержка
+    .container
+      .row
+        form.form.form-login(action='/cms/login' method='POST')
+          h1.text-center Авторизация
+          h2 Пожалуйста, авторизуйтесь
+          .form-group
+            input.form-control.input-lg(type="text" placeholder="Логин"
+              name='login')
+          .form-group
+            input.form-control.input-lg(type="password" placeholder="Пароль"
+              name='password')
+          .form-group
+            label
+             input(type='checkbox')
+             span Запомнить меня на этом компьютере
+          .form-group
+            input(type='submit'
+              value='Войти').btn.btn-green.btn-lg.btn-block
+          a.lost-password(hred='') забыли пароль?

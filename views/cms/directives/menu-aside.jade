@@ -1,0 +1,15 @@
+.col-md-1.aside-menu.nav__block__bg.padding0.menu__rb
+  .nav__block
+    ul.nav.nav-stacked
+      li(ng-repeat='subMenu in mv.menu' ng-class='[subMenu.className, mv.isActive($index)]')
+        a.action-link(ng-click='mv.changeActiveMenu($index)'
+          ng-if='subMenu.children'
+          ng-class='{active: mv.activeMenu === subMenu}') {{subMenu.name}}
+        a.action-link(ui-sref='{{subMenu.state}}'
+          ng-click='mv.changeActiveMenu($index)'
+          ng-if='!subMenu.children'
+          ng-class='{active: mv.activeMenu === subMenu}') {{subMenu.name}}
+
+vit-menu-pane(vit-active-menu='mv.activeMenu'
+  ng-if='mv.isOpen'
+  ng-class='mv.isOpen ? "slide-left" : "slide-right"')
